@@ -176,6 +176,24 @@ h1{
   padding: 10px;
 }
 
+.main-problem{
+  position: relative;
+}
+
+.main-problem p{
+  text-align: center;
+  font-size: 1.5vw;
+  color: black;
+  font-weight: bold;
+}
+
+
+/* .main-problem:hover { 
+  padding: 0;
+  background: var(--coralFuerte);
+  opacity: 60%;
+} */
+
 .main-quote{
   text-align: center;
 }

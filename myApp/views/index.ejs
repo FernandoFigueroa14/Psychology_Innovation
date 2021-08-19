@@ -51,9 +51,12 @@
       <section class="main-problems">
         <h2>Tenemos profesionales para atender...</h2>
         <div class="main-problems-images">
-          <%for(let i=0; i<8; i++){ %>
-            <div>
-              <img src="images/placeholder.jpg" alt="default_image">
+          <% let images = ['ansiedad', 'depresion', 'transtornosAlimenticios', 'terapiaFamiliar', 'terapiaPareja', 'autoestima', 'desarrolloPersonal'];
+          let imagesText = ['Ansiedad', 'Depresión', 'Transtornos Alimenticios', 'Terapia Familiar', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal'];
+          for(let i=0; i < images.length; i++){ %>
+            <div class="main-problem">
+              <p><%= imagesText[i] %></p>
+              <img src="images/<%= images[i] %>.jpg" alt="<%= images[i] %>_image">
             </div>
           <% } %>
         </div>
