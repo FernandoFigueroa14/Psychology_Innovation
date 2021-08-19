@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5{
 }
 
 h1{
-  font-size: 3vw;
+  font-size: 3.5rem;
 }
 
 .header-logo{
@@ -69,6 +69,21 @@ h1{
   font-weight: 500;
 }
 
+.burger-menu{
+  text-align: center;
+  display: none;
+}
+
+.fa-bars{
+  background-color: var(--coralFuerte);
+  padding: 10px;
+  border-radius: 10%;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: black;
+  margin: 10px;
+}
+
 .portada{
   position: relative;
 }
@@ -83,7 +98,7 @@ h1{
 
 .portada button, .main-quote button{
   color: white;
-  font-size: 1.5vw;
+  font-size: 2rem;
   font-weight: bold;
   background-color: var(--coralFuerte);
   padding: 13px 23px;
@@ -95,7 +110,7 @@ h1{
 .portada button{
   position: absolute;
   bottom: -3%;
-  left: 35%;
+  left: 34%;
 }
 
 .portada button:hover, .main-quote button:hover{
@@ -120,22 +135,25 @@ h1{
 
 .main-left-info h3{
   text-align: center;
-  font-size: 2vw;
-  margin-top: 10px;
+  font-size: 2.5rem;
+  padding: 0 10px;
 }
 
 .main-left-info ul{
-  margin: 40px;
-  font-size: 1.2vw;
+  padding : 40px;
+  font-size: 2rem;
+  width: 100%;
 }
 
 .main-left-info ul li{
-  margin: 40px 0;
+  margin-bottom: 40px;
+  width: 100%;
 }
 
 .main-left-info p{
   margin: 40px;
-  font-size: 1.2vw;
+  font-size: 2rem;
+  text-align: justify;
 }
 
 .main-img-info{
@@ -159,7 +177,7 @@ h1{
 
 .main-problems h2{
   text-align: center;
-  font-size: 2.5vw;
+  font-size: 3rem;
   margin: 40px 0 20px 0;
 }
 
@@ -182,7 +200,7 @@ h1{
 
 .main-problem p{
   text-align: center;
-  font-size: 1.5vw;
+  font-size: 2rem;
   color: black;
   font-weight: bold;
 }
@@ -199,12 +217,13 @@ h1{
 }
 
 .main-quote h3{
-  font-size: 2vw;
+  font-size: 3rem;
   margin: 10px;
 }
 
 footer, .footer-nav-bar{
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   padding: 10px 40px;
@@ -221,7 +240,7 @@ footer, .footer-nav-bar{
 
 .footer-nav-bar{
   width: 75%;
-  font-size: 1.5vw;
+  font-size: 2rem;
   text-align: left;
 }
 
@@ -246,14 +265,14 @@ footer, .footer-nav-bar{
 }
 
 .footer-nav-bar-social a{
-  font-size: 2vw;
+  font-size: 3rem;
 }
 
 .footer-copyrights{
   display: block;
   text-align: center;
   padding: 10px;
-  font-size: 1.2vw;
+  font-size: 1.7rem;
 }
 
 /* Slideshow container */
@@ -347,4 +366,98 @@ footer, .footer-nav-bar{
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+/*------------ Media Queries ------------------*/
+@media (max-width: 480px) {
+  footer, .footer-nav-bar{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .footer-nav-bar-social ul{
+    flex-direction: row;
+  }
+  .footer-nav-bar1{
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 769px) {
+  .burger-menu{
+    display: flex;
+  }
+  .header-nav-bar{
+    display: none;
+  }
+  .portada button{
+    position: absolute;
+    bottom: -7%;
+    left: 33%;
+    padding: 12px;
+    font-size: 1rem;
+  }
+  .main-h1{
+    margin-bottom: 10px;
+  }
+  .main-info{
+    margin: 10px;
+    flex-direction: column;
+  }
+  .main-info *{
+    width: 100%;
+  }
+  .main-info h3{
+    font-size: 3rem;
+  }
+
+  .main-left-info-impar{
+    order: 2;
+  }
+
+  .main-left-info ul{
+    margin: 0;
+    margin-left: 0px;
+  }
+  .main-left-info ul li {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .main-left-info p{
+    margin: 0;
+    padding: 20px;
+  }
+
+  .banner{
+    margin: 20px;
+  }
+  .main-problems-images{
+    flex-direction: column;
+  }
+  .main-problems-images div{
+    width: 100%;
+    padding: 20px;
+  }
+  .footer-logo img{
+    width: 80%;
+  }
+  .footer-nav-bar-social ul{
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-nav-bar{
+    padding: 0;
+  }
+  .footer-nav-bar-1 a{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .footer-nav-bar-1{
+    width: 40%;
+  }
+  .footer-nav-bar-social{
+    width: 9%;
+  }
 }
