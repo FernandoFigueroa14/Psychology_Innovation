@@ -8,7 +8,7 @@ const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const terapeutasRouter = require('./routes/terapeutas')
 
-const PORT = process.env.PORT | 8080;
+const PORT = process.env.PORT || 8080;
 
 const app = express();
 
