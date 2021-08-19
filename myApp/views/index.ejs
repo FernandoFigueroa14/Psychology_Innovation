@@ -1,11 +1,163 @@
+
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<html lang="en">
+  <!-- head --> 
+  <%- include('./partials/head', {title: title}) %>
+  <!-- /head -->
   <body>
-    <h1><%= title %></h1>
+    <!-- header --> 
+    <%- include('./partials/header') %>
+    <!-- /header -->
+    <!-- <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <p>Join to <%= title %></p> -->
+
+    <section class="portada">
+      <img src="/images/portada.jpeg" alt="portada">
+      <form action="/" method="GET">
+        <button class="portada-button" type="submit">¡ENCUENTRA YA TU TERAPEUTA!    <i class="fas fa-arrow-right"></i></button>
+      </form>
+    </section>
+    <section class="main-section">
+      <h1 class="main-h1">Obtén un terapeuta para cada necesidad</h1>
+      <article class="main-info">
+        <div class="main-left-info">
+          <h3>Más de 1000 psicologos disponibles para ti</h3>
+          <ul>
+            <li>
+              Sesiones personalizadas con los mejores terapeutas del país.
+            </li>
+            <li>
+              Sé libre de ir a tu ritmo con base a lo señalado por tu profesional.
+            </li>
+            <li>
+              Flexibilidad de horario.
+            </li>
+            <li>
+              100% online.
+            </li>
+          </ul>
+        </div>
+
+        <div class="main-img-info">
+          <img src="images/placeholder.jpg" alt="default_image">
+        </div>
+      </article>
+      
+      <div class="banner">
+        <img src="images/placeholder.jpg" alt="default_image">
+      </div>
+
+      <section class="main-problems">
+        <h2>Tenemos profesionales para atender...</h2>
+        <div class="main-problems-images">
+          <%for(let i=0; i<8; i++){ %>
+            <div>
+              <img src="images/placeholder.jpg" alt="default_image">
+            </div>
+          <% } %>
+        </div>
+      </section>
+
+      <article class="main-info">
+        <div class="main-left-info">
+          <h3>Conexión con psicólogos del país</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+        </div>
+
+        <div class="main-img-info">
+          <img src="images/placeholder.jpg" alt="default_image">
+        </div>
+      </article>
+
+      <article class="main-info">
+        <div class="main-img-info">
+          <img src="images/placeholder.jpg" alt="default_image">
+        </div>
+        <div class="main-left-info">
+          <h3>Te ayudamos a prepararte para tu entrevista</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+        </div>
+
+      </article>
+
+      <section class="main-quote">
+        <h3>Psychology Innovation</h3>
+        <form action="/" method="GET">
+          <button class="quote-button" type="submit">HAZ CLICK AQUÍ </button>
+        </form>
+      </section>
+
+      <section class="main-carrusel">
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+          <!-- Full-width images with number and caption text -->
+          <div class="mySlides fade">
+            <img src="images/prueba1.svg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="images/prueba2.svg" style="width:100%">
+          </div>
+
+          <div class="mySlides fade">
+            <img src="images/prueba3.svg" style="width:100%">
+          </div>
+
+          <!-- Next and previous buttons -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <br>
+      </section>
+      
+    </section>
+    
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+    <!-- /footer -->
   </body>
+
+  <script>var slideIndex = 0;
+    showSlidesManual(slideIndex);
+    showSlidesAuto();
+    
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlidesManual(slideIndex += n);
+    }
+
+    function showSlidesManual(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      //var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      // for (i = 0; i < dots.length; i++) {
+      //     dots[i].className = dots[i].className.replace(" active", "");
+      // }
+      slides[slideIndex-1].style.display = "block";
+      //dots[slideIndex-1].className += " active";
+    }
+
+    function showSlidesAuto() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      slides[slideIndex-1].style.display = "block";
+      setTimeout(showSlides, 10000); // Change image every 2 seconds
+    }</script>
 </html>
