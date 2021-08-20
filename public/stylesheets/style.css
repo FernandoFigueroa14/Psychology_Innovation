@@ -12,6 +12,7 @@
   --naranjaClaro: #FF8160;
   --amarilloClaro: #FFEBAC;
   --naranja: #F76C31;
+  --backgroundColor: #FF833F;
 
   --fuentePrincipal: 'Montserrat', sans-serif;
   --fuenteSecundaria: helvetica;
@@ -34,7 +35,7 @@ header{
 
 body {
   font-family: var(--fuenteSecundaria);
-  background-color: var(--naranja);
+  background-color: var(--backgroundColor);
   color: white;
 }
 
