@@ -28,9 +28,12 @@
     transition: all 0.5s;
 }
 
-.form-control-register input:visited{
+input:focus-visible{
+    outline: none;
+}
+
+.form-control-register input:focus{
     border: var(--naranja) 3px solid;
-    border-radius: 14px;
 }
 
 .form-control-register input[type = 'file']{
