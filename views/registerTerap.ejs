@@ -8,12 +8,52 @@
     <%- include('./partials/header') %>
     <!-- /header -->
     <main>
-        <h1>Conviértete en terapeuta</h1>
-        <div id="terap-register">
-            <form action="/index" method="POST">
-                
-            </form>
-        </div>
+        <section class="main-terap-register">
+            <h1>Crea tu cuenta como terapeuta</h1>
+            <div id="terap-register">
+                <form action="/terapeutas/register" method="POST" enctype="multipart/form-data">
+                    <div class="form-control-register">
+                        <label for="nameTerap">Nombre(s)</label>
+                        <input type="text" name="nameTerap" placeholder="Nombre(s)" minlength="3" value="<%=locals.oldData ? oldData.nameTerap : ''%>">
+                    </div>
+                    <div class="form-control-register">
+                        <label for="lastnameTerap">Apellidos</label>
+                        <input type="text" name="lastnameTerap" placeholder="Apellidos" minlength="3" value="<%=locals.oldData ? oldData.lastnameTerap : ''%>">
+                    </div>
+                    <div class="form-control-register">
+                        <label for="emailTerap">Correo electrónico</label>
+                        <input type="email" name="emailTerap" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.emailTerap : ''%>">
+                    </div>
+                    <div class="form-control-register">
+                        <label for="passwordTerap">Contraseña</label>
+                        <input type="password" name="passwordTerap" placeholder="Contraseña" minlength="8">
+                    </div>
+                    <div class="form-control-register">
+                        <label for="passwordConfirmTerap">Introduce de nuevo tu contraseña</label>
+                        <input type="password" name="passwordConfirmTerap" placeholder="Introduce de nuevo tu contraseña" minlength="8">
+                    </div>
+                    <div class="form-control-register">
+                        <label for="cedulaTerap">Cédula profesional</label>
+                        <input type="number" name="cedulaTerap" placeholder="Número de cédula profesional" minlength="8">
+                    </div>
+                    <div class="form-control-register">
+                        <label for="descriptionTerap">Descripción general</label>
+                        <textarea name="descriptionTerap" id="descriptionTerap" size='250' cols="30" rows="10" minlength="200"></textarea><!-- cols="30" rows="10" -->
+                    </div>
+                    <div class="form-control-register">
+                        <label for="videoTerap"> Video 1:1</label>
+                        <input type="file" name="videoTerap" accept=".mp4">
+                    </div>
+                    <div class="form-control-register">
+                        <label for="tituloTerap"> Titulo universitario</label>
+                        <input type="file" name="tituloTerap" accept=".pdf">
+                    </div>
+                    <div id="button-register">
+                        <button type="submit">Crear tu cuenta</button>
+                    </div>
+                </form>
+            </div>
+        </section>
     </main>
     <!-- footer -->
     <%- include('./partials/footer') %>

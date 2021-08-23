@@ -1,0 +1,42 @@
+.main-terap-register{
+    margin: auto;
+    margin-top: 130px;
+    margin-bottom: 30px;
+    background-color: white;
+    width: 40%;
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+    border: 1px solid black;
+}
+
+.form-control-register{
+    padding: 10px;
+    text-align: center;
+}
+.form-control-register label{
+    font-size: 2rem;
+    color: black;
+    display: block;
+}
+
+.form-control-register input{
+    border: none;
+    border: var(--coralFuerte) 1px solid;
+    padding: 14px 24px;
+    border-radius: 14px;
+    transition: all 0.5s;
+}
+
+.form-control-register input:visited{
+    border: var(--naranja) 3px solid;
+    border-radius: 14px;
+}
+
+.form-control-register input[type = 'file']{
+    border: none;
+}
+
+.form-control-register button{
+    margin: auto;
+}

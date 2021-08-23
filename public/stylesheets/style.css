@@ -22,21 +22,27 @@ html {
   box-sizing: border-box;
   font-size: 62.5%; 
   font-family: var(--fuentePrincipal);
-  background-color: var(--naranjaClaro);
+  background-color: white;
 }
 
 header{
   padding: 10px;
   display: flex;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(var(--naranjaClaro), var(--coralClaro), var(--naranjaClaro));
+  /* background: linear-gradient(var(--naranjaClaro), var(--coralClaro), var(--naranjaClaro)); */
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5);
 }
 
 body {
   font-family: var(--fuenteSecundaria);
-  background-color: var(--backgroundColor);
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 h1, h2, h3, h4, h5{
@@ -45,6 +51,10 @@ h1, h2, h3, h4, h5{
 
 h1{
   font-size: 3.5rem;
+}
+
+main{
+  margin-top: 100px;
 }
 
 .header-logo{
@@ -97,6 +107,7 @@ h1{
 
 .portada img{
   width: 100%;
+  max-height: 500px;
   text-align: center;
 }
 
@@ -186,6 +197,10 @@ h1{
   margin: 40px 0 20px 0;
 }
 
+.main-problems{
+  padding: 0 50px;
+}
+
 .main-problems-images{
   display: flex;
 }
@@ -232,6 +247,9 @@ footer, .footer-nav-bar{
   align-items: center;
   padding: 10px 40px;
 }
+footer{
+  box-shadow: 2px 0px 10px 0px rgba(0,0,0,0.5);
+}
 
 .footer-logo{
   width: 25%;
@@ -250,13 +268,13 @@ footer, .footer-nav-bar{
 
 .footer-nav-bar a{
   text-decoration: none;
-  color: white;
+  color: black;
   padding: 10px;
   transition: all 0.5s;
 }
 
 .footer-nav-bar a:hover{
-  color: black;
+  color: var(--coralFuerte);
   font-weight: 400;
 }
 

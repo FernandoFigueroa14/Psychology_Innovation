@@ -11,6 +11,9 @@ const terapeutasController = {
     },
     register: (req, res) => {
         res.render(path.resolve(__dirname,'../views/registerTerap'), {title: 'Registro'});
+    },
+    registerTerap: (req, res) => {
+        res.render(path.resolve(__dirname,'../views/index'), {title: 'Coralio'})
     }
 }
 
