@@ -3,11 +3,16 @@
     margin-top: 130px;
     margin-bottom: 30px;
     background-color: white;
-    width: 40%;
+    width: 90%;
     padding: 20px;
     border-radius: 10px;
     color: black;
-    border: 1px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+    background-color: var(--amarilloClaro);
+}
+.main-terap-register h1{
+    text-align: center;
 }
 
 .form-control-register{
@@ -20,15 +25,13 @@
     display: block;
 }
 
-.form-control-register input{
+.form-control-register input, textarea{
     border: none;
     border: var(--coralFuerte) 1px solid;
     padding: 14px 24px;
     border-radius: 14px;
+    width: 80%;
     transition: all 0.5s;
-}
-
-input:focus-visible{
     outline: none;
 }
 
@@ -42,4 +45,61 @@ input:focus-visible{
 
 .form-control-register button{
     margin: auto;
+}
+.form-file{
+    display: none;
+}
+.form-file-button{
+    background-color:transparent;
+    color: white;
+    border: none;
+}
+.file-button{
+    width: 80%;
+    margin: auto;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 14px;
+    color: white;
+    background-color: var(--coralFuerte);
+    font-size: 1.5rem;
+    transition: all 0.5s;
+}
+
+#button-register{
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+#button-register button{
+    margin: auto;
+    width: 100%;
+    font-size: 2rem;
+    transition: all 0.5s;
+}
+
+
+.file-button:hover, #button-register button:hover{
+    color: var(--coralFuerte);
+    background-color: var(--coralClaro);
+    border: 1px var(--coralFuerte) solid;
+}
+
+.file-button:hover  i{
+    color: var(--coralFuerte);
+}
+
+.form-terap{
+    display: flex;
+}
+
+.col1, .col2{
+    width: 50%;
+}
+
+@media (max-width: 480px) {
+    .col1, .col2{
+        width: 100%;
+    }
 }

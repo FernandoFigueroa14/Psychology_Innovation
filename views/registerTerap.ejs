@@ -8,48 +8,64 @@
     <%- include('./partials/header') %>
     <!-- /header -->
     <main>
-        <section class="main-terap-register">
+        <section class="main-terap-register container">
             <h1>Crea tu cuenta como terapeuta</h1>
             <div id="terap-register">
-                <form action="/terapeutas/register" method="POST" enctype="multipart/form-data">
-                    <div class="form-control-register">
-                        <label for="nameTerap">Nombre(s)</label>
-                        <input type="text" name="nameTerap" placeholder="Nombre(s)" minlength="3" value="<%=locals.oldData ? oldData.nameTerap : ''%>">
+                <form action="/terapeutas/register" method="POST" enctype="multipart/form-data" class="form-terap">
+                    <div class="col1">
+                        <div class="form-control-register">
+                            <label for="nameTerap">Nombre(s)</label>
+                            <input type="text" name="nameTerap" placeholder="Nombre(s)" minlength="3" value="<%=locals.oldData ? oldData.nameTerap : ''%>">
+                        </div>
+                        <div class="form-control-register">
+                            <label for="lastnameTerap">Apellidos</label>
+                            <input type="text" name="lastnameTerap" placeholder="Apellidos" minlength="3" value="<%=locals.oldData ? oldData.lastnameTerap : ''%>">
+                        </div>
+                        <div class="form-control-register">
+                            <label for="emailTerap">Correo electrónico</label>
+                            <input type="email" name="emailTerap" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.emailTerap : ''%>">
+                        </div>
+                        <div class="form-control-register">
+                            <label for="passwordTerap">Contraseña</label>
+                            <input type="password" name="passwordTerap" placeholder="Contraseña" minlength="8">
+                        </div>
+                        <div class="form-control-register">
+                            <label for="passwordConfirmTerap">Introduce de nuevo tu contraseña</label>
+                            <input type="password" name="passwordConfirmTerap" placeholder="Introduce de nuevo tu contraseña" minlength="8">
+                        </div>
                     </div>
-                    <div class="form-control-register">
-                        <label for="lastnameTerap">Apellidos</label>
-                        <input type="text" name="lastnameTerap" placeholder="Apellidos" minlength="3" value="<%=locals.oldData ? oldData.lastnameTerap : ''%>">
-                    </div>
-                    <div class="form-control-register">
-                        <label for="emailTerap">Correo electrónico</label>
-                        <input type="email" name="emailTerap" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.emailTerap : ''%>">
-                    </div>
-                    <div class="form-control-register">
-                        <label for="passwordTerap">Contraseña</label>
-                        <input type="password" name="passwordTerap" placeholder="Contraseña" minlength="8">
-                    </div>
-                    <div class="form-control-register">
-                        <label for="passwordConfirmTerap">Introduce de nuevo tu contraseña</label>
-                        <input type="password" name="passwordConfirmTerap" placeholder="Introduce de nuevo tu contraseña" minlength="8">
-                    </div>
-                    <div class="form-control-register">
-                        <label for="cedulaTerap">Cédula profesional</label>
-                        <input type="number" name="cedulaTerap" placeholder="Número de cédula profesional" minlength="8">
-                    </div>
-                    <div class="form-control-register">
-                        <label for="descriptionTerap">Descripción general</label>
-                        <textarea name="descriptionTerap" id="descriptionTerap" size='250' cols="30" rows="10" minlength="200"></textarea><!-- cols="30" rows="10" -->
-                    </div>
-                    <div class="form-control-register">
-                        <label for="videoTerap"> Video 1:1</label>
-                        <input type="file" name="videoTerap" accept=".mp4">
-                    </div>
-                    <div class="form-control-register">
-                        <label for="tituloTerap"> Titulo universitario</label>
-                        <input type="file" name="tituloTerap" accept=".pdf">
+                    <div class="col2">
+                        <div class="form-control-register">
+                            <label for="cedulaTerap">Cédula profesional</label>
+                            <input type="text" name="cedulaTerap" placeholder="Número de cédula profesional" minlength="8">
+                        </div>
+                        <div class="form-control-register">
+                            <label for="descriptionTerap">Descripción general</label>
+                            <textarea name="descriptionTerap" id="descriptionTerap" size='250' cols="30" rows="7" minlength="200"></textarea><!-- cols="30" rows="10" -->
+                        </div>
+                        <div class="form-control-register">
+                            <label for="videoTerap"> Video 1:1</label>
+                            <label class="form-block-input">
+                                <input type="file" name="custom-file" class="form-file" id="videoTerap" accept=".mp4">
+                                <div class="file-button">
+                                    <button class="form-file-button"><i class="fas fa-film"></i></button>
+                                    <span class="form-file-span">Selecciona un archivo</span>
+                                </div>
+                             </label>
+                        </div>
+                        <div class="form-control-register">
+                            <label for="tituloTerap"> Titulo universitario</label>
+                            <label class="form-block-input">
+                                <input type="file" name="custom-file" class="form-file" id="tituloTerap" accept=".pdf">
+                                <div class="file-button">
+                                    <button class="form-file-button"><i class="fas fa-file-pdf"></i></button>
+                                    <span class="form-file-span">Selecciona un archivo</span>
+                                </div>
+                             </label>
+                        </div>
                     </div>
                     <div id="button-register">
-                        <button type="submit">Crear tu cuenta</button>
+                        <button class="file-button" type="submit">Crear tu cuenta</button>
                     </div>
                 </form>
             </div>
@@ -58,5 +74,38 @@
     <!-- footer -->
     <%- include('./partials/footer') %>
     <!-- /footer -->
+    <script>// Ejecutar hasta que se haya cargado la página
+        document.addEventListener('DOMContentLoaded', () => {
+            // Obtener inputs tipo file y sus botones para poder asignar eventos
+            const fileInputs = document.querySelectorAll('input[type=file]');
+            const fileButtons = document.querySelectorAll('.form-file-button');
+            // Asignar eventos a inputs y botones
+            fileInputs.forEach(file => file.addEventListener('change', fileChange));
+            fileButtons.forEach(button => button.addEventListener('click', fileClick));
+        });
+        
+        // Cambios en inputs
+        function fileChange(e) {
+            // e - es el evento
+            // e.target - es el elemento que lo disparó
+            // .closest() - permite acceder al padre (label)
+            // desde el padre se obtiene el contenedor para mostrar archivos
+            let input = e.target;
+            let spanBlock = e.target.closest('label').querySelector('.form-file-span');
+            // Limpiar contenedor
+            spanBlock.innerHTML = '';
+            // Recorrer archivos para agregarlos al contenedor
+            Array.from(input.files).forEach(file => {
+                spanBlock.innerHTML += `<span class="form-files">${file.name}</span>`;
+            });
+        }
+        
+        // Clics en botones
+        function fileClick(e) {
+            // Desde el botón se obtiene el input y se abre la ventana para seleccionar archivos
+            let input = e.target.closest('label').querySelector('input');
+            input.click();
+        }
+    </script>
 </body>
 </html>
