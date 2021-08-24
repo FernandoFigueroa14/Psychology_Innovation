@@ -9,11 +9,14 @@ const terapeutasController = {
     terapeutas: (req, res) => {
         res.render(path.resolve(__dirname,'../views/terapeutas'), {title: 'Terapeutas'});
     },
+    login: (req, res) => {
+        res.render(path.resolve(__dirname,'../views/login'), {title: 'Inicia sesión'});
+    },
     register: (req, res) => {
         res.render(path.resolve(__dirname,'../views/registerTerap'), {title: 'Registro'});
     },
     registerTerap: (req, res) => {
-        res.render(path.resolve(__dirname,'../views/index'), {title: 'Coralio'})
+        return res.redirect('/terapeutas/login');
     }
 }
 

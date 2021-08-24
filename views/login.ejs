@@ -7,7 +7,31 @@
     <!-- header --> 
     <%- include('./partials/header') %>
     <!-- /header -->
-    <h1>Inicia sesión</h1>
+    <main>
+        <section class="main-login-register container">
+            <h1>Inicia sesión</h1>
+            <div id="login-register">
+                <form action="/terapeutas/login" method="POST" class="form-login">
+                    <div class="col1">
+                        <div class="form-control-register">
+                            <label for="emailLogin">Correo electrónico</label>
+                            <input type="email" name="emailLogin" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.emailTerap : ''%>">
+                        </div>
+                        
+                    </div>
+                    <div class="col2">
+                        <div class="form-control-register">
+                            <label for="passwordLogin">Contraseña</label>
+                            <input type="password" name="passwordLogin" placeholder="Contraseña" minlength="8">
+                        </div>
+                    </div>
+                    <div id="button-register">
+                        <button class="file-button" type="submit">Inicia sesión</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
     <!-- footer -->
     <%- include('./partials/footer') %>
     <!-- /footer -->
