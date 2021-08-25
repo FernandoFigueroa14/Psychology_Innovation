@@ -15,13 +15,23 @@ const validations = [
     body('passwordTerap')
         .notEmpty()
         .withMessage('Debes de colocar tu contraseña')
+        .isStrongPassword('',{returnScore: true})
+        .withMessage('Contraseña debil: la contraseña debe de ser mínimo de 8 caracteres, alfanumérica y con un caracter especial')
         .isLength({min: 8})
         .withMessage('Tu contraseña debe contener al menos 8 caracteres'),    
     body('passwordConfirmTerap')
         .notEmpty()
         .withMessage('Debes de colocar tu contraseña')
         .isLength({min: 8})
-        .withMessage('Tu contraseña debe contener al menos 8 caracteres'),
+        .withMessage('Tu contraseña debe contener al menos 8 caracteres')
+        .custom((value, { req }) => {
+            if (value !== req.body.passwordTerap) {
+              throw new Error('La contraseña no es igual');
+            }
+        
+            // Indicates the success of this synchronous custom validator
+            return true;
+          }),
     body('cedulaTerap')
         .notEmpty()
         .withMessage('Debes de colocar tu cédula profesional')
