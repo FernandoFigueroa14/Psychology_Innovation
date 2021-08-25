@@ -23,7 +23,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookies());
-app.use(session( {secret: "Acceso seguro", resave: false, saveUninitialized: false} ));
+app.use(session( {secret: "Acceso seguro Coralio", resave: false, saveUninitialized: false} ));
 
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -17,52 +17,79 @@
                             <label for="nameTerap">Nombre(s)</label>
                             <input type="text" name="nameTerap" placeholder="Nombre(s)" minlength="3" value="<%=locals.oldData ? oldData.nameTerap : ''%>">
                         </div>
+                        <%if(locals.errors && errors.nameTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.nameTerap.msg %></p>
+                        <%}%>
                         <div class="form-control-register">
                             <label for="lastnameTerap">Apellidos</label>
                             <input type="text" name="lastnameTerap" placeholder="Apellidos" minlength="3" value="<%=locals.oldData ? oldData.lastnameTerap : ''%>">
                         </div>
+                        <%if(locals.errors && errors.lastnameTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.lastnameTerap.msg %></p>
+                        <%}%>
                         <div class="form-control-register">
                             <label for="emailTerap">Correo electrónico</label>
                             <input type="email" name="emailTerap" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.emailTerap : ''%>">
                         </div>
+                        <%if(locals.errors && errors.emailTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.emailTerap.msg %></p>
+                        <%}%>
                         <div class="form-control-register">
                             <label for="passwordTerap">Contraseña</label>
                             <input type="password" name="passwordTerap" placeholder="Contraseña" minlength="8">
                         </div>
+                        <%if(locals.errors && errors.passwordTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.passwordTerap.msg %></p>
+                        <%}%>
                         <div class="form-control-register">
                             <label for="passwordConfirmTerap">Introduce de nuevo tu contraseña</label>
                             <input type="password" name="passwordConfirmTerap" placeholder="Introduce de nuevo tu contraseña" minlength="8">
                         </div>
+                        <%if(locals.errors && errors.passwordConfirmTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.passwordConfirmTerap.msg %></p>
+                        <%}%>
                     </div>
                     <div class="col2">
                         <div class="form-control-register">
                             <label for="cedulaTerap">Cédula profesional</label>
-                            <input type="text" name="cedulaTerap" placeholder="Número de cédula profesional" minlength="8">
+                            <input type="text" name="cedulaTerap" placeholder="Número de cédula profesional" minlength="8" value="<%=locals.oldData ? oldData.cedulaTerap : ''%>">
                         </div>
+                        <%if(locals.errors && errors.cedulaTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.cedulaTerap.msg %></p>
+                        <%} %>
                         <div class="form-control-register">
                             <label for="descriptionTerap">Descripción general</label>
-                            <textarea name="descriptionTerap" id="descriptionTerap" size='250' cols="30" rows="7" minlength="200"></textarea><!-- cols="30" rows="10" -->
+                            <textarea name="descriptionTerap" id="descriptionTerap" size='250' cols="30" rows="7" minlength="200" value="<%=locals.oldData ? oldData.descriptionTerap : ''%>"></textarea><!-- cols="30" rows="10" -->
                         </div>
+                        <%if(locals.errors && errors.descriptionTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.descriptionTerap.msg %></p>
+                        <%}%>
                         <div class="form-control-register">
                             <label for="videoTerap"> Video 1:1</label>
                             <label class="form-block-input">
-                                <input type="file" name="custom-file" class="form-file" id="videoTerap" accept=".mp4">
+                                <input type="file" name="videoTerap" class="form-file videoTerap" id="videoTerap" accept=".mp4">
                                 <div class="file-button">
                                     <button class="form-file-button"><i class="fas fa-film"></i></button>
                                     <span class="form-file-span">Selecciona un archivo</span>
                                 </div>
                              </label>
                         </div>
+                        <%if(locals.errors && errors.videoTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.videoTerap.msg %></p>
+                        <%}%>
                         <div class="form-control-register">
                             <label for="tituloTerap"> Titulo universitario</label>
                             <label class="form-block-input">
-                                <input type="file" name="custom-file" class="form-file" id="tituloTerap" accept=".pdf">
+                                <input type="file" name="tituloTerap" class="form-file tituloTerap" id="tituloTerap" accept=".pdf">
                                 <div class="file-button">
                                     <button class="form-file-button"><i class="fas fa-file-pdf"></i></button>
                                     <span class="form-file-span">Selecciona un archivo</span>
                                 </div>
                              </label>
                         </div>
+                        <%if(locals.errors && errors.tituloTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.tituloTerap.msg %></p>
+                        <%}%>
                     </div>
                     <div id="button-register">
                         <button class="file-button" type="submit">Crear tu cuenta</button>
