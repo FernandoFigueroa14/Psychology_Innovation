@@ -306,6 +306,12 @@ footer{
   margin: auto;
 }
 
+.testimonios-main{
+  text-align: center;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
 /* .carousel-indicators [data-bs-target]{
   background-color: black;
 } */

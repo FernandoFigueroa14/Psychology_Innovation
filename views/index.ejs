@@ -14,54 +14,24 @@
     <main>
       <section class="portada">
         <img src="/images/portada.jpeg" alt="portada">
-        <form action="/" method="GET">
+        <!-- <form action="/" method="GET">
           <button class="portada-button" type="submit">¡ENCUENTRA YA TU TERAPEUTA!    <i class="fas fa-arrow-right"></i></button>
-        </form>
+        </form> -->
       </section>
       <section class="main-section">
-        <h1 class="main-h1">Obtén un terapeuta para cada necesidad</h1>
-        <article class="main-info">
-          <div class="main-left-info main-left-info-impar">
-            <h3>Te conectamos con los mejores terapeutas del país</h3>
-            <!-- <h3>Más de 1000 psicologos disponibles para ti</h3> -->
-            <!-- <ul>
-              <li>
-                Sesiones personalizadas con los mejores terapeutas del país.
-              </li>
-              <li>
-                Sé libre de ir a tu ritmo con base a lo señalado por tu profesional.
-              </li>
-              <li>
-                Flexibilidad de horario.
-              </li>
-              <li>
-                100% online.
-              </li>
-            </ul> -->
-            <p>Todos los humanos somos <strong>diferentes</strong>, en específico cuando hablamos de nuestras <strong>mentes</strong>. Es por esto, que en Coralio nos pusimos una sola misión, encontrar a <strong>los mejores psicólogos</strong> del país y que además puedan tener la mejor conexión con sus pacientes. 
-            </p>
-            <p>Esto lo logramos a través de un riguroso filtro, en el cual nos aseguramos de que todos los psicólogos que formen parte de Coralio cuenten con los requisitos para poder sanar las mentes y el espíritu de todo aquel que lo necesite, con un trato <strong>profesional y personalizado</strong>.</p>
-  
-          </div>
-  
-          <div class="main-img-info">
-            <img src="images/placeholder.jpg" alt="default_image">
-          </div>
-        </article>
+        <!-- <h1 class="main-h1">Obtén un terapeuta para cada necesidad</h1> -->
         
-        <div class="banner">
+        <!-- <div class="banner">
           <img src="images/placeholder.jpg" alt="default_image">
-        </div>
+        </div> -->
   
         <section class="main-problems">
-          <h2>Tenemos profesionales para atender...</h2>
+          <h2>Como es visto en</h2>
           <div class="main-problems-images">
-            <% let images = ['ansiedad', 'depresion', 'transtornosAlimenticios', 'terapiaFamiliar', 'terapiaPareja', 'autoestima', 'desarrolloPersonal'];
-            let imagesText = ['Ansiedad', 'Depresión', 'Transtornos Alimenticios', 'Terapia Familiar', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal'];
-            for(let i=0; i < images.length; i++){ %>
+            <% let imagesTop = ['ansiedad', 'depresion', 'transtornosAlimenticios', 'terapiaFamiliar'];
+            for(let i=0; i < imagesTop.length; i++){ %>
               <div class="main-problem">
-                <p><%= imagesText[i] %></p>
-                <img src="images/<%= images[i] %>.jpg" alt="<%= images[i] %>_image">
+                <img src="images/<%= imagesTop[i] %>.jpg" alt="<%= imagesTop[i] %>_image">
               </div>
             <% } %>
           </div>
@@ -85,21 +55,50 @@
             <img src="images/placeholder.jpg" alt="default_image">
           </div>
           <div class="main-left-info">
+            <h3>Te conectamos con los mejores terapeutas del país</h3>
+            <!-- <h3>Más de 1000 psicologos disponibles para ti</h3> -->
+            <!-- <ul>
+              <li>
+                Sesiones personalizadas con los mejores terapeutas del país.
+              </li>
+              <li>
+                Sé libre de ir a tu ritmo con base a lo señalado por tu profesional.
+              </li>
+              <li>
+                Flexibilidad de horario.
+              </li>
+              <li>
+                100% online.
+              </li>
+            </ul> -->
+            <p>Todos los humanos somos <strong>diferentes</strong>, en específico cuando hablamos de nuestras <strong>mentes</strong>. Es por esto, que en Coralio nos pusimos una sola misión, encontrar a <strong>los mejores psicólogos</strong> del país y que además puedan tener la mejor conexión con sus pacientes. 
+            </p>
+            <p>Esto lo logramos a través de un riguroso filtro, en el cual nos aseguramos de que todos los psicólogos que formen parte de Coralio cuenten con los requisitos para poder sanar las mentes y el espíritu de todo aquel que lo necesite, con un trato <strong>profesional y personalizado</strong>.</p>
+  
+          </div>
+  
+        </article>
+        <!-- <article class="main-info">
+          <div class="main-img-info main-left-info-impar">
+            <img src="images/placeholder.jpg" alt="default_image">
+          </div>
+          <div class="main-left-info">
             <h3>Te ayudamos a prepararte para tu entrevista</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
             </p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
           </div>
   
-        </article>
+        </article> -->
   
-        <section class="main-quote">
+        <!-- <section class="main-quote">
           <h3>Psychology Innovation</h3>
           <form action="/" method="GET">
             <button class="quote-button" type="submit">HAZ CLICK AQUÍ </button>
           </form>
-        </section>
+        </section> -->
   
+        <h2 class="testimonios-main">Testimonios</h2>
         <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -126,7 +125,20 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        
+
+        <section class="main-problems">
+          <h2>Tenemos profesionales para atender...</h2>
+          <div class="main-problems-images">
+            <% let images = ['ansiedad', 'depresion', 'transtornosAlimenticios', 'terapiaFamiliar', 'terapiaPareja', 'autoestima', 'desarrolloPersonal'];
+            let imagesText = ['Ansiedad', 'Depresión', 'Transtornos Alimenticios', 'Terapia Familiar', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal'];
+            for(let i=0; i < images.length; i++){ %>
+              <div class="main-problem">
+                <p><%= imagesText[i] %></p>
+                <img src="images/<%= images[i] %>.jpg" alt="<%= images[i] %>_image">
+              </div>
+            <% } %>
+          </div>
+        </section>
       </section>
     </main>
     <!-- footer -->
