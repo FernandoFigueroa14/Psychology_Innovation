@@ -27,7 +27,7 @@ html {
 
 header{
   display: flex;
-  height: 110px;
+  max-height: 110px;
   width: 100%;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +37,9 @@ header{
   top: 0;
   z-index: 100;
   /* box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.5); */
+}
+.header-logo, .header-nav-bar{
+  padding: 20px 10px;
 }
 
 body {
@@ -306,9 +309,9 @@ footer{
 
 .footer-nav-bar{
   width: 75%;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: left;
-}
+} 
 
 .footer-nav-bar a{
   text-decoration: none;
@@ -359,6 +362,9 @@ footer{
 /*------------ Media Queries ------------------*/
 
 @media (max-width: 769px) {
+  header{
+    max-height: 80px;
+  }
   .header-logo img{
     width: 80%;
   }
@@ -456,7 +462,7 @@ footer{
     padding-right: 0;
   }
   .footer-nav-bar-1{
-    width: 40%;
+    width: 30%;
   }
   .footer-nav-bar-social{
     width: 9%;
@@ -474,7 +480,19 @@ footer{
     font-size: 2.3rem;
   }
 
+  .main-problems-images{
+    margin: 0;
+  }
+  
   .main-problems-images img{
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    transition: all 0.5s;
+  }
+  
+  .top img{
+    width: 100%;
     padding: 20px;
   }
 

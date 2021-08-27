@@ -39,8 +39,10 @@ function barraScroll(){
 
     if(porcentaje>0){
         header.style.boxShadow = '0px 1px 1px 0px rgba(0,0,0,0.5)';
+        header.style.opacity = '0.95';
     }else{
         header.style.boxShadow = '0px 0px 0px 0px rgba(255,255,255,0.5)';
+        header.style.opacity = '1';
     }
 }
 
