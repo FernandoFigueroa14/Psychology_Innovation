@@ -18,6 +18,7 @@ function eventListeners(){
             burgerMenu.classList.remove('fas.fa-bars');
             burgerMenu.style.color = 'var(--coralFuerte)';
             menu.style.opacity = 1;
+            
         }else{
             burgerMenu.className = 'fas fa-bars';
             burgerMenu.classList.remove('fas.fa-times');
