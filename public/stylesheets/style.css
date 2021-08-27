@@ -173,7 +173,7 @@ input:focus-visible{
 }
 
 .main-left-info h3{
-  text-align: justify;
+  text-align: center;
   font-weight: bold;
   font-size: 2.5rem;
   padding: 0 40px;
@@ -193,7 +193,11 @@ input:focus-visible{
 .main-left-info p{
   margin: 10px 40px;
   font-size: 1.7rem;
-  text-align: justify;
+  text-align: left;
+}
+
+.main-left-info-impar p{
+  text-align: right;
 }
 
 .main-img-info{
@@ -423,6 +427,10 @@ footer{
     order: 2;
   }
 
+  .main-left-info-impar p{
+    text-align: left;
+  }
+
   .main-left-info ul{
     margin: 0;
     margin-left: 0px;
@@ -441,10 +449,11 @@ footer{
     margin: 20px;
   }
   .main-problems-images{
-    flex-direction: column;
+    flex-direction: row;
+    margin: 0;
   }
   .main-problems-images div{
-    width: 100%;
+    width: 50%;
     padding: 20px;
   }
   .footer-logo img{
@@ -487,7 +496,12 @@ footer{
   }
 
   .main-problems-images{
+    flex-direction: column;
     margin: 0;
+  }
+
+  .main-problems-images div{
+    width: 100%;
   }
   
   .main-problems-images img{
