@@ -133,7 +133,11 @@
             let imagesText = ['Ansiedad', 'Depresión', 'Transtornos Alimenticios', 'Terapia Familiar', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal'];
             for(let i=0; i < images.length; i++){ %>
               <div class="main-problem">
-                <!-- <p><%= imagesText[i] %></p> -->
+                <% if(imagesText[i] == 'Transtornos Alimenticios') { %>
+                  <p class="transtornos">Transtornos <br> Alimenticios</p>
+                <% }else{%>
+                  <p><%= imagesText[i] %></p>
+                <% } %>
                 <img src="images/portadas/<%= images[i] %>/<%= images[i] %>.png" alt="<%= images[i] %>_image">
               </div>
             <% } %>
