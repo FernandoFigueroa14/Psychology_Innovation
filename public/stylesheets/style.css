@@ -166,6 +166,8 @@ input:focus-visible{
 
 .main-left-info{
   width: 50%;
+  padding: 30px;
+  margin: auto;
 }
 
 .main-left-info h3{
@@ -187,8 +189,8 @@ input:focus-visible{
 }
 
 .main-left-info p{
-  margin: 40px;
-  font-size: 2rem;
+  margin: 10px 40px;
+  font-size: 1.7rem;
   text-align: justify;
 }
 
@@ -225,16 +227,24 @@ input:focus-visible{
 
 .main-problems-images{
   display: flex;
+  margin: 0 100px;
 }
 
 .main-problems-images div{
   width: 25%;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .main-problems-images img{
-  width: 100%;
-  padding: 50px;
+  width: 65%;
+  justify-content: center;
   transition: all 0.5s;
+}
+
+.top img{
+  width: 100%;
+  padding: 20px;
 }
 
 .main-problem{
@@ -243,17 +253,18 @@ input:focus-visible{
 
 .main-problem p{
   text-align: center;
-  font-size: 2.5rem;
-  font-weight: bold;
-  position: absolute;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-top: 10px;
+  /* position: absolute;
   top: 46%;
   left: 0;
   right: 0;
   opacity: 0;
-  transition: all 0.5s;
+  transition: all 0.5s; */
 }
 
-.main-problem:hover img{
+/* .main-problem:hover img{
   opacity: 0.3;
   padding: 10px;
 }
@@ -262,7 +273,7 @@ input:focus-visible{
   opacity: 100%;
   color: var(--coralFuerte);
   z-index: 50;
-}
+} */
 
 .main-quote{
   text-align: center;
@@ -354,6 +365,17 @@ footer{
   .burger-menu{
     display: block;
     float: right;
+    font-size: 2.5rem;
+  }
+  .fa-times{
+    /* background-color: var(--coralFuerte); */
+    padding: 10px;
+    border-radius: 10%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* color: black; */
+    margin: 10px;
+    cursor: pointer;
   }
   .header-nav-bar{
     opacity: 0;

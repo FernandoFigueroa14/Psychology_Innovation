@@ -27,7 +27,7 @@
   
         <section class="main-problems" data-appear-anim-style="fadeInLeft">
           <h2>Como es visto en</h2>
-          <div class="main-problems-images">
+          <div class="main-problems-images top">
             <% let imagesTop = ['ansiedad', 'depresion', 'transtornosAlimenticios', 'terapiaFamiliar'];
             for(let i=0; i < imagesTop.length; i++){ %>
               <div class="main-problem">
@@ -133,12 +133,12 @@
             let imagesText = ['Ansiedad', 'Depresión', 'Transtornos Alimenticios', 'Terapia Familiar', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal'];
             for(let i=0; i < images.length; i++){ %>
               <div class="main-problem">
-                <% if(imagesText[i] == 'Transtornos Alimenticios') { %>
+                <!-- <% if(imagesText[i] == 'Transtornos Alimenticios') { %>
                   <p class="transtornos">Transtornos <br> Alimenticios</p>
-                <% }else{%>
-                  <p><%= imagesText[i] %></p>
-                <% } %>
+                <% }else{%> -->
+                <!-- <% } %> -->
                 <img src="images/portadas/<%= images[i] %>/<%= images[i] %>.png" alt="<%= images[i] %>_image">
+                <p><%= imagesText[i] %></p>
               </div>
             <% } %>
           </div>
