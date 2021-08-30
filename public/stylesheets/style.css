@@ -165,6 +165,14 @@ input:focus-visible{
   justify-content: center;
   margin: 50px;
 }
+.main-info-impar{
+  margin-left: 0;
+  margin-top: 0;
+}
+.main-info-par{
+  margin-right: 0;
+  margin-bottom: 0;
+}
 
 .main-left-info{
   width: 50%;
@@ -206,7 +214,6 @@ input:focus-visible{
 
 .main-img-info img{
   width: 100%;
-  padding: 10px;
 }
 
 .banner{
@@ -219,24 +226,35 @@ input:focus-visible{
   height: 100%;
 }
 
-.main-problems h2{
+.main-problems h2, .main-top h2{
   text-align: center;
-  font-weight: bold;
-  font-size: 3rem;
+  font-weight: 500;
+  font-size: 7.5rem;
   margin: 40px 0 30px 0;
 }
 
-.main-problems{
+.main-top h2{
+  font-weight: bold;
+  font-size: 4rem;
+}
+
+.main-problems, .main-top{
   padding: 0 50px;
   margin-bottom: 20px;
 }
 
 .main-problems-images{
   display: flex;
-  margin: 0 140px;
+  justify-content: center;
+  margin: 0 350px;
 }
 
-.main-problems-images div{
+.main-top-images{
+  display: flex;
+  margin: 0 120px;
+}
+
+.main-problems-images div, .main-top-image{
   width: 25%;
   text-align: center;
   margin-top: 10px;
@@ -260,7 +278,7 @@ input:focus-visible{
 
 .main-problem p{
   text-align: center;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 500;
   margin-top: 10px;
   /* position: absolute;
@@ -423,12 +441,16 @@ footer{
     font-size: 3rem;
   }
 
-  .main-left-info-impar{
+  .main-left-info-impar img{
     order: 2;
   }
 
   .main-left-info-impar p{
     text-align: left;
+  }
+
+  .main-left-info{
+    order: -10;
   }
 
   .main-left-info ul{
@@ -447,6 +469,9 @@ footer{
 
   .banner{
     margin: 20px;
+  }
+  .main-problems h2{
+    font-size: 4rem;
   }
   .main-problems-images{
     flex-direction: row;

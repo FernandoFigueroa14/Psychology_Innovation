@@ -25,34 +25,34 @@
           <img src="images/placeholder.jpg" alt="default_image">
         </div> -->
   
-        <section class="main-problems" data-appear-anim-style="fadeInLeft">
+        <section class="main-top" data-appear-anim-style="fadeInLeft">
           <h2>Como es visto en</h2>
-          <div class="main-problems-images top">
+          <div class="main-top-images top">
             <% let imagesTop = ['ansiedad', 'depresion', 'transtornosAlimenticios', 'terapiaFamiliar'];
             for(let i=0; i < imagesTop.length; i++){ %>
-              <div class="main-problem">
+              <div class="main-top-image">
                 <img src="images/<%= imagesTop[i] %>.jpg" alt="<%= imagesTop[i] %>_image">
               </div>
             <% } %>
           </div>
         </section>
   
-        <article class="main-info">
+        <article class="main-info main-info-par">
           <div class="main-left-info">
-            <h3>Conexión con psicólogos del país</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            <h3>Es hora de sanar</h3>
+            <p>A veces, cuando nos sentimos mal con nuestra mente y espíritu percibimos que estamos aislados, sin saber a quien recurrir ni que hacer. Vivimos sin ser tomados con la seriedad que se debería al momento de platicar sobre nuestros temas psicológicos. Es hora de cambiar esto. 
             </p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. .</p>
+            <p>En Coralio, vamos a trabajar, para que de la mano de los mejores expertos en psicología y bienestar, tratemos todos los temas que gustes. Estaremos para ti a todas horas y en todo momento, ya sea a través de consultas u otros medios de contacto.</p>
           </div>
   
           <div class="main-img-info">
-            <img src="images/placeholder.jpg" alt="default_image">
+            <img src="images/img1.jpg" alt="img1">
           </div>
         </article>
   
-        <article class="main-info">
+        <article class="main-info main-info-impar">
           <div class="main-img-info main-left-info-impar">
-            <img src="images/placeholder.jpg" alt="default_image">
+            <img src="images/img2.jpg" alt="img2">
           </div>
           <div class="main-left-info main-left-info-impar">
             <h3>Te conectamos con los mejores terapeutas del país</h3>
@@ -127,10 +127,10 @@
         </div>
 
         <section class="main-problems">
-          <h2>Tenemos profesionales para atender...</h2>
+          <h2>TENEMOS ESPECIALISTAS EN</h2>
           <div class="main-problems-images">
-            <% let images = ['ansiedad', 'depresion', 'transtornoAlimenticio', 'terapiaFamiliar', 'terapiaDePareja', 'autoestima', 'desarrolloPersonal'];
-            let imagesText = ['Ansiedad', 'Depresión', 'Transtornos Alimenticios', 'Terapia Familiar', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal'];
+            <% let images = ['depresion', 'ansiedad', 'terapiaDePareja', 'autoestima', 'desarrolloPersonal', 'transtornoAlimenticio', 'terapiaFamiliar'];
+            let imagesText = ['Depresión', 'Ansiedad', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal', 'Trastorno Alimenticio', 'Terapia Familiar'];
             for(let i=0; i < images.length; i++){ %>
               <div class="main-problem">
                 <!-- <% if(imagesText[i] == 'Transtornos Alimenticios') { %>
