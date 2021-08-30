@@ -251,6 +251,8 @@ input:focus-visible{
 
 .main-top-images{
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0 120px;
 }
 
