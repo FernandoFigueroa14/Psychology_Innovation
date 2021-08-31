@@ -40,12 +40,36 @@ const validations = [
     body('descriptionTerap')
         .notEmpty()
         .withMessage('Debes de colocar tu descripción'),
+    body('fotoTerap')
+    .custom((value, { req }) => {
+        if (!req.files.fotoTerap) {
+          throw new Error('Debes de colocar una foto de perfil');
+        }
+    
+        // Indicates the success of this synchronous custom validator
+        return true;
+      }),
     body('videoTerap')
-        .notEmpty()
-        .withMessage('Debes de colocar tu video'),
+        .custom((value, { req }) => {
+            if (!req.files.videoTerap) {
+            throw new Error('Debes de colocar tu video');
+            }
+        
+            // Indicates the success of this synchronous custom validator
+            return true;
+        }),
     body('tituloTerap')
+        .custom((value, { req }) => {
+            if (!req.files.tituloTerap) {
+            throw new Error('Debes de colocar tu titulo universitario');
+            }
+        
+            // Indicates the success of this synchronous custom validator
+            return true;
+        }),
+    body('especialidad')
         .notEmpty()
-        .withMessage('Debes de colocar tu titulo universitario')
+        .withMessage('Debes de marcar al menos una especialidad')
 ]
 
 module.exports = validations;

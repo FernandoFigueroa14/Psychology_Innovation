@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <!-- head --> 
-<%- include('./partials/head', {title: title}) %>
+<%- include('../partials/head', {title: title}) %>
 <!-- /head -->
 <body>
     <!-- header --> 
-    <%- include('./partials/header') %>
+    <%- include('../partials/header') %>
     <!-- /header -->
     <main>
         <section class="main-terap-register container">
@@ -42,11 +42,33 @@
                             <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.passwordTerap.msg %></p>
                         <%}%>
                         <div class="form-control-register">
-                            <label for="passwordConfirmTerap">Introduce de nuevo tu contraseña</label>
-                            <input type="password" name="passwordConfirmTerap" placeholder="Introduce de nuevo tu contraseña" minlength="8">
+                            <label for="passwordConfirmTerap">Confirmación de contraseña</label>
+                            <input type="password" name="passwordConfirmTerap" placeholder="Confirmación de contraseña" minlength="8">
                         </div>
                         <%if(locals.errors && errors.passwordConfirmTerap){%>
                             <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.passwordConfirmTerap.msg %></p>
+                        <%}%>
+                        <div class="form-control-register">
+                            <label for="especialidades">Especialidad</label>
+                            
+                            <div class="especialidades">
+                                <label class="especialidad" for="ansiedad"><input type="checkbox" name="especialidad" value="ansiedad" id="ansiedad">Ansiedad</label>
+                                
+                                <label class="especialidad" for="autoestima"><input type="checkbox" name="especialidad" value="autoestima" id="autoestima">Autoestima</label>
+
+                                <label class="especialidad" for="depresion"><input type="checkbox" name="especialidad" value="depresion" id="depresion">Depresión</label>
+
+                                <label class="especialidad" for="desarrolloPersonal"><input type="checkbox" name="especialidad value="desarrolloPersonal" id="desarrolloPersonal">Desarrollo Personal</label>
+
+                                <label class="especialidad" for="terapiaDePareja"><input type="checkbox" name="especialidad" value="terapiaDePareja" id="terapiaDePareja">Terapia de Pareja</label>
+
+                                <label class="especialidad" for="terapiaFamiliar"><input type="checkbox" name="especialidad" value="terapiaFamiliar" id="terapiaFamiliar">Terapia Familiar</label>
+
+                                <label class="especialidad" for="transtornoAlimenticio"><input type="checkbox" name="especialidad" value="transtornoAlimenticio" id="transtornoAlimenticio">Trastorno Alimenticio</label>  
+                            </div>
+                        </div>
+                        <%if(locals.errors && errors.especialidad){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.especialidad.msg %></p>
                         <%}%>
                     </div>
                     <div class="col2">
@@ -59,10 +81,23 @@
                         <%} %>
                         <div class="form-control-register">
                             <label for="descriptionTerap">Descripción general</label>
-                            <textarea name="descriptionTerap" id="descriptionTerap" size='250' cols="30" rows="7" minlength="200" value="<%=locals.oldData ? oldData.descriptionTerap : ''%>"></textarea><!-- cols="30" rows="10" -->
+                            <textarea name="descriptionTerap" id="descriptionTerap" size='250' cols="30" rows="7" maxlength="200" value="<%=locals.oldData ? oldData.descriptionTerap : ''%>"></textarea><!-- cols="30" rows="10" -->
                         </div>
                         <%if(locals.errors && errors.descriptionTerap){%>
                             <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.descriptionTerap.msg %></p>
+                        <%}%>
+                        <div class="form-control-register">
+                            <label for="fotoTerap"> Foto de perfil</label>
+                            <label class="form-block-input">
+                                <input type="file" name="fotoTerap" class="form-file fotoTerap" id="fotoTerap" accept=".jpg, .png">
+                                <div class="file-button">
+                                    <button class="form-file-button"><i class="fas fa-image"></i></button>
+                                    <span class="form-file-span">Selecciona un archivo</span>
+                                </div>
+                             </label>
+                        </div>
+                        <%if(locals.errors && errors.fotoTerap){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.fotoTerap.msg %></p>
                         <%}%>
                         <div class="form-control-register">
                             <label for="videoTerap"> Video 1:1</label>
@@ -77,6 +112,7 @@
                         <%if(locals.errors && errors.videoTerap){%>
                             <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.videoTerap.msg %></p>
                         <%}%>
+                        
                         <div class="form-control-register">
                             <label for="tituloTerap"> Titulo universitario</label>
                             <label class="form-block-input">
@@ -99,7 +135,7 @@
         </section>
     </main>
     <!-- footer -->
-    <%- include('./partials/footer') %>
+    <%- include('../partials/footer') %>
     <!-- /footer -->
     <script>// Ejecutar hasta que se haya cargado la página
         document.addEventListener('DOMContentLoaded', () => {

@@ -6,11 +6,8 @@ const fs = require('fs');
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const userController = {
-    login: (req, res) => {
-        res.render(path.resolve(__dirname,'../views/login'), {title: 'Login'});
-    },
     register: (req, res) => {
-        res.render(path.resolve(__dirname,'../views/registerUser'), {title: 'Registro'});
+        res.render(path.resolve(__dirname,'../views/userViews/registerUser'), {title: 'Registro'});
     }
 }
 

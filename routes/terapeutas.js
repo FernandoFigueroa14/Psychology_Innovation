@@ -9,9 +9,7 @@ const terapeutasController = require('../controllers/terapeutasController');
 /* GET home page. */
 router.get('/terapeutas', terapeutasController.terapeutas);
 
-router.get('/terapeutas/login', terapeutasController.login);
-
 router.get('/terapeutas/register', terapeutasController.register);
-router.post('/terapeutas/register', upload.fields([{name: 'tituloTerap'}, {name: 'videoTerap'}]), registerTerapValidations, terapeutasController.registerTerap);
+router.post('/terapeutas/register', upload.fields([{name: 'tituloTerap'}, {name: 'videoTerap'}, {name: 'fotoTerap'}]), registerTerapValidations, terapeutasController.processRegister);
 
 module.exports = router;

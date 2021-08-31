@@ -25,6 +25,23 @@
     display: block;
 }
 
+.especialidades{
+    display: flex;
+    align-items: center;
+    text-align: start;
+    width: 80%;
+    margin: auto;
+}
+.especialidades label{
+    font-size: 1.5rem;
+    display: inline;
+    width: 50%;
+}
+
+.especialidad{
+    padding: 10px 5px 0 5px;
+}
+
 .form-control-register input, textarea{
     border: none;
     border: var(--coralFuerte) 1px solid;
@@ -79,6 +96,9 @@
     transition: all 0.5s;
 }
 
+.especialidades input{
+    width: 20px;
+}
 
 .file-button:hover, #button-register button:hover{
     color: var(--coralFuerte);
@@ -107,6 +127,9 @@
 
 @media (max-width: 480px) {
     .col1, .col2{
+        width: 100%;
+    }
+    .especialidades label{
         width: 100%;
     }
 }
