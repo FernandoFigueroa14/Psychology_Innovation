@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <!-- head --> 
+  <%- include('./partials/head', {title: title}) %>
+  <!-- /head -->
+  <body>
+    <!-- header --> 
+    <%- include('./partials/header') %>
+    <!-- /header -->
+    <!-- <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <p>Join to <%= title %></p> -->
+    <main>
+      <section class="portada">
+        <img src="/images/portadaHome.png" alt="portada">
+        <!-- <form action="/" method="GET">
+          <button class="portada-button" type="submit">¡ENCUENTRA YA TU TERAPEUTA!    <i class="fas fa-arrow-right"></i></button>
+        </form> -->
+      </section>
+      <section class="main-section">
+        <!-- <h1 class="main-h1">Obtén un terapeuta para cada necesidad</h1> -->
+        
+        <!-- <div class="banner">
+          <img src="images/placeholder.jpg" alt="default_image">
+        </div> -->
+  
+        <section class="main-top" data-appear-anim-style="fadeInLeft">
+          <h2>Como es visto en</h2>
+          <div class="main-top-images top">
+            <% let imagesTop = ['diarioDeYucatan', 'forbes', 'reforma'];
+            for(let i=0; i < imagesTop.length; i++){ %>
+              <div class="main-top-image">
+                <img src="images/empresas/<%= imagesTop[i] %>.png" alt="<%= imagesTop[i] %>_image">
+              </div>
+            <% } %>
+          </div>
+        </section>
+  
+        <article class="main-info main-info-par">
+          <div class="main-left-info">
+            <h3>Es hora de sanar</h3>
+            <p>A veces, cuando nos sentimos mal con nuestra mente y espíritu percibimos que estamos aislados, sin saber a quien recurrir ni que hacer. Vivimos sin ser tomados con la seriedad que se debería al momento de platicar sobre nuestros temas psicológicos. Es hora de cambiar esto. 
+            </p>
+            <p>En Coralio, vamos a trabajar, para que de la mano de los mejores expertos en psicología y bienestar, tratemos todos los temas que gustes. Estaremos para ti a todas horas y en todo momento, ya sea a través de consultas u otros medios de contacto.</p>
+          </div>
+  
+          <div class="main-img-info">
+            <img src="images/img1.jpg" alt="img1">
+          </div>
+        </article>
+  
+        <article class="main-info main-info-impar">
+          <div class="main-img-info main-left-info-impar">
+            <img src="images/img2.jpg" alt="img2">
+          </div>
+          <div class="main-left-info main-left-info-impar">
+            <h3>Te conectamos con los mejores terapeutas del país</h3>
+            <!-- <h3>Más de 1000 psicologos disponibles para ti</h3> -->
+            <!-- <ul>
+              <li>
+                Sesiones personalizadas con los mejores terapeutas del país.
+              </li>
+              <li>
+                Sé libre de ir a tu ritmo con base a lo señalado por tu profesional.
+              </li>
+              <li>
+                Flexibilidad de horario.
+              </li>
+              <li>
+                100% online.
+              </li>
+            </ul> -->
+            <p>Todos los humanos somos <strong>diferentes</strong>, en específico cuando hablamos de nuestras <strong>mentes</strong>. Es por esto, que en Coralio nos pusimos una sola misión, encontrar a <strong>los mejores psicólogos</strong> del país y que además puedan tener la mejor conexión con sus pacientes. 
+            </p>
+            <p>Esto lo logramos a través de un riguroso filtro, en el cual nos aseguramos de que todos los psicólogos que formen parte de Coralio cuenten con los requisitos para poder sanar las mentes y el espíritu de todo aquel que lo necesite, con un trato <strong>profesional y personalizado</strong>.</p>
+  
+          </div>
+  
+        </article>
+        <!-- <article class="main-info">
+          <div class="main-img-info main-left-info-impar">
+            <img src="images/placeholder.jpg" alt="default_image">
+          </div>
+          <div class="main-left-info">
+            <h3>Te ayudamos a prepararte para tu entrevista</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
+          </div>
+  
+        </article> -->
+  
+        <!-- <section class="main-quote">
+          <h3>Psychology Innovation</h3>
+          <form action="/" method="GET">
+            <button class="quote-button" type="submit">HAZ CLICK AQUÍ </button>
+          </form>
+        </section> -->
+  
+        <h2 class="testimonios-main">Testimonios</h2>
+        <div id="carouselExampleIndicators" class="carousel carousel-dark slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="images/prueba1.svg" class="d-block w-100" alt="prueba1">
+            </div>
+            <div class="carousel-item">
+              <img src="images/prueba2.svg" class="d-block w-100" alt="prueba2">
+            </div>
+            <div class="carousel-item">
+              <img src="images/prueba3.svg" class="d-block w-100" alt="prueba3">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <section class="main-problems">
+          <h2>TENEMOS ESPECIALISTAS EN</h2>
+          <div class="main-problems-images">
+            <% let images = ['depresion', 'ansiedad', 'terapiaDePareja', 'autoestima', 'desarrolloPersonal', 'transtornoAlimenticio', 'terapiaFamiliar'];
+            let imagesText = ['Depresión', 'Ansiedad', 'Terapia de Pareja', 'Autoestima', 'Desarrollo Personal', 'Trastorno Alimenticio', 'Terapia Familiar'];
+            for(let i=0; i < images.length; i++){ %>
+              <div class="main-problem">
+                <!-- <% if(imagesText[i] == 'Transtornos Alimenticios') { %>
+                  <p class="transtornos">Transtornos <br> Alimenticios</p>
+                <% }else{%> -->
+                <!-- <% } %> -->
+                <img src="images/portadas/<%= images[i] %>/<%= images[i] %>.png" alt="<%= images[i] %>_image">
+                <p><%= imagesText[i] %></p>
+              </div>
+            <% } %>
+          </div>
+        </section>
+      </section>
+    </main>
+    <!-- footer -->
+    <%- include('./partials/footer') %>
+    <!-- /footer -->
+  </body>
+
+  
+</html>

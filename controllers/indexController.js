@@ -7,7 +7,7 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const indexController = {
     home: (req, res) => {
-        res.render(path.resolve('views/index'), {title: 'Coralio'});
+        res.render(path.resolve('views/index'), {title: 'Coralio - Sanamos mente y espiritu'});
     },
     faqs: (req, res) => {
         res.render(path.resolve('views/faqs'), {title: 'FAQs'});
