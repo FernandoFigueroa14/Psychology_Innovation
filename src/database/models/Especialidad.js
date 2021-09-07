@@ -17,20 +17,16 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Especialidad = sequelize.define(alias,cols,config);
 
-    // Especialidad.associate = function (models) {
-    //     Especialidad.belongsTo(models.Genre, { // models.Genre -> Genres es el valor de alias en genres.js
-    //         as: "genre",
-    //         foreignKey: "genre_id"
-    //     })
+    Especialidad.associate = function (models) {
 
-    //     Especialidad.belongsToMany(models.Actor, { // models.Actor -> Actors es el valor de alias en actor.js
-    //         as: "actors",
-    //         through: 'actor_movie',
-    //         foreignKey: 'movie_id',
-    //         otherKey: 'actor_id',
-    //         timestamps: false
-    //     })
-    // }
+        Especialidad.belongsToMany(models.Terapeuta, { // models.Actor -> Actors es el valor de alias en actor.js
+            as: "terapeuta",
+            through: 'terap_especialidades',
+            foreignKey: 'id_especialidad',
+            otherKey: 'id_terap',
+            timestamps: false
+        })
+    }
 
-    return Especialidad
+    return Especialidad;
 };

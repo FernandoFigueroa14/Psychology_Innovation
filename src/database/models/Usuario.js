@@ -38,20 +38,15 @@ module.exports = (sequelize, dataTypes) => {
     }
     const Usuario = sequelize.define(alias,cols,config);
 
-    // Usuario.associate = function (models) {
-    //     Usuario.belongsTo(models.Genre, { // models.Genre -> Genres es el valor de alias en genres.js
-    //         as: "genre",
-    //         foreignKey: "genre_id"
-    //     })
+    Usuario.associate = function (models) {
+        Usuario.belongsToMany(models.Terapeuta, { // models.Actor -> Actors es el valor de alias en actor.js
+            as: "terapeuta",
+            through: 'terap_usuarios',
+            foreignKey: 'id_usuario',
+            otherKey: 'id_terapeuta',
+            timestamps: true
+        })
+    }
 
-    //     Usuario.belongsToMany(models.Actor, { // models.Actor -> Actors es el valor de alias en actor.js
-    //         as: "actors",
-    //         through: 'actor_movie',
-    //         foreignKey: 'movie_id',
-    //         otherKey: 'actor_id',
-    //         timestamps: false
-    //     })
-    // }
-
-    return Usuario
+    return Usuario;
 };
