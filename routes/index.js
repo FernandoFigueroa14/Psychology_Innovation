@@ -11,5 +11,6 @@ router.get('/index', indexController.home);
 router.get('/faqs', indexController.faqs);
 
 router.get('/login', loginController.login);
+router.post('/login', loginController.processLogin);
 
 module.exports = router;

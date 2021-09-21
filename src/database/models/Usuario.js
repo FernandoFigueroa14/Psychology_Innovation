@@ -1,40 +1,43 @@
+const { tableName } = require("sequelize/lib/model");
+
 module.exports = (sequelize, dataTypes) => {
     let alias = 'Usuario'; // esto debería estar en singular
     let cols = {
         id: {
-            type: dataTypes.INT,
+            type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         nombres: {
-            type: dataTypes.VARCHAR(60),
+            type: dataTypes.STRING(60),
             allowNull: false
         },
         apellidos: {
-            type: dataTypes.VARCHAR(60),
+            type: dataTypes.STRING(60),
             allowNull: false
         },
         email: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         contraseña: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         fechaNacimiento: {
             type: dataTypes.DATEONLY,
             allowNull: false
         },
-        createdAt: dataTypes.TIMESTAMP,
-        updatedAt: dataTypes.TIMESTAMP,
+        createdAt: dataTypes.DATE,
+        updatedAt: dataTypes.DATE,
     };
     let config = {
         timestamps: true,
         createdAt: 'createdAt',
         updatedAt: 'updatedAt',
-        deletedAt: false
+        deletedAt: false,
+        tableName: 'usuarios'
     }
     const Usuario = sequelize.define(alias,cols,config);
 

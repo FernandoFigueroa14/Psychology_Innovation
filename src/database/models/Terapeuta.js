@@ -2,55 +2,56 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Terapeuta'; // esto debería estar en singular
     let cols = {
         id: {
-            type: dataTypes.INT,
+            type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         nombres: {
-            type: dataTypes.VARCHAR(60),
+            type: dataTypes.STRING(60),
             allowNull: false
         },
         apellidos: {
-            type: dataTypes.VARCHAR(60),
+            type: dataTypes.STRING(60),
             allowNull: false
         },
         email: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         contraseña: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         },
         cedula: {
-            type: dataTypes.INT,
+            type: dataTypes.BIGINT(10).UNSIGNED,
             allowNull: false
         },
         descripcion: {
-            type: dataTypes.VARCHAR(200),
+            type: dataTypes.STRING(200),
             allowNull: false
         },
         linkVideo: {
-            type: dataTypes.VARCHAR(1000),
+            type: dataTypes.STRING(1000),
             allowNull: false
         },
         linkTitulo: {
-            type: dataTypes.VARCHAR(1000),
+            type: dataTypes.STRING(1000),
             allowNull: false
         },
         linkImagen: {
-            type: dataTypes.VARCHAR(1000),
+            type: dataTypes.STRING(1000),
             allowNull: false
         },
-        createdAt: dataTypes.TIMESTAMP,
-        updatedAt: dataTypes.TIMESTAMP,
+        createdAt: dataTypes.DATE,
+        updatedAt: dataTypes.DATE,
     };
     let config = {
         timestamps: true,
         createdAt: 'createdAt',
         updatedAt: 'updatedAt',
-        deletedAt: false
+        deletedAt: false,
+        tableName: 'terapeutas'
     }
     const Terapeuta = sequelize.define(alias,cols,config);
 

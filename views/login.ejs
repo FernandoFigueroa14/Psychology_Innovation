@@ -10,19 +10,36 @@
     <main>
         <section class="main-login-register container">
             <h1>Inicia sesión</h1>
-            <div id="login-register">
-                <form action="/terapeutas/login" method="POST" class="form-login">
-                    <div class="col1">
+            <div id="login-register container">
+                <form action="/login" method="POST" class="form-login row">
+                    <div class="col-6">
                         <div class="form-control-register">
-                            <label for="emailLogin">Correo electrónico</label>
-                            <input type="email" name="emailLogin" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.emailTerap : ''%>">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" name="email" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.email : ''%>">
                         </div>
-                        
+                        <% if (locals.errors && errors.email) { %>
+                            <p class="errors-style"> <%= errors.email.msg %> </p>
+                        <% } %>
                     </div>
-                    <div class="col2">
+
+                    <div class="col-6">
                         <div class="form-control-register">
-                            <label for="passwordLogin">Contraseña</label>
-                            <input type="password" name="passwordLogin" placeholder="Contraseña" minlength="8">
+                            <label for="password">Contraseña</label>
+                            <input type="password" name="password" placeholder="Contraseña" minlength="8">
+                        </div>
+                        <% if (locals.errors && errors.password) { %>
+                            <p class="errors-style"> <%= errors.password.msg %> </p>
+                        <% } %>
+                    </div>
+
+                    <div class=" col-12 row d-flex justify-content-center text-center">
+                        <div class="form-control-login remember-user col-6">
+                            <input type="checkbox" name="remember_user" id="remember_user">
+                            <label for="remember_user"> Recordar mi Usuario</label>
+                        </div>
+
+                        <div class="form-control-login col-6">
+                            <a href="/user/register">¿No eres miembro? Únete</a>
                         </div>
                     </div>
                     <div id="button-register">

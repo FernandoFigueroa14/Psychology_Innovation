@@ -3,54 +3,77 @@ const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const { validationResult } = require('express-validator');
 const modelTerap = require('../models/modelTerap');
+const db = require('../src/database/models');
+const Terapeuta = require('../src/database/models/Terapeuta');
+
+const Terapeutas = db.Terapeuta;
+const Usuarios = db.Usuario;
 
 const loginController = {
     login: (req, res) => {
         res.render(path.resolve(__dirname,'../views/login'), {title: 'Inicia sesión'});
     },
-    processLogin: (req, res) => {
-        let terapToLogin = modelTerap.findByField('emailTerap', req.body.user);
+    processLogin: async (req, res) => {
+        //let terapToLogin = modelTerap.findByField('emailTerap', req.body.email);
+        let terapToLogin = await Terapeutas.findOne({
+            where:{
+                email: req.body.email
+            }
+        });
 
-        if(terapToLogin){
-            let validationPassword = bcryptjs.compareSync(req.body.password, terapToLogin.passwordTerap);
-            if(validationPassword){
-                delete terapToLogin.passwordTerap;
-                req.session.terapLogged = terapToLogin;
+        let userToLogin = await Usuarios.findOne({
+            where:{
+                email: req.body.email
+            }
+        });
 
-                if(req.body.remember_user){
-                    res.cookie('emailTerap', req.body.user, {maxAge: (1000*60)*60});
+        Promise.all([terapToLogin, userToLogin])
+            .then(([terap, user]) => {
+                if(terap){
+                    let validationPassword = bcryptjs.compareSync(req.body.password, terap.contraseña);
+                    console.log(validationPassword);
+                    if(validationPassword){
+                        //delete terap.passwordTerap;
+                        req.session.Logged = terap;
+        
+                        if(req.body.remember_user){
+                            res.cookie('email', req.body.email, {maxAge: (1000*60)*60});
+                        }
+        
+                        return res.redirect('/profile');
+                    }else{
+                        return res.render(path.resolve('views/login'), {title: 'Inicia sesión',
+                            errors: {
+                                email: {
+                                    msg: 'Las credenciales son inválidas'
+                                }
+                            }
+                        })
+                    }
                 }
-
-                return res.redirect('/profile');
-            }else{
-                return res.render(path.resolve('views/login'), {
+                
+                return res.render(path.resolve('views/login'), {title: 'Inicia sesión',
                     errors: {
-                        user: {
-                            msg: 'Las credenciales son inválidas'
+                        email: {
+                            msg: 'No se encuentra este correo electronico en nuestra base de datos'
                         }
                     }
                 })
-            }
-        }
-        
-        return res.render(path.resolve('views/userViews/login'), {
-            errors: {
-                user: {
-                    msg: 'No se encuentra este correo electronico en nuestra base de datos'
-                }
-            }
-        })
+            })
+            .catch(error => res.send(error));
 
+        
+        /*
         const resultValidation = validationResult(req);
 
         if (!resultValidation.isEmpty()) {
             console.log(resultValidation);
-            res.render(path.resolve('views/userViews/login'), {errors: resultValidation.mapped(), oldData: req.body});
+            res.render(path.resolve('views/login'), {errors: resultValidation.mapped(), oldData: req.body});
         } else {
             res.send('login');
         }
-        modelTerap.create(req.body);
-    },
+        modelTerap.create(req.body);*/
+    }
 }
 
 module.exports = loginController;

@@ -2,18 +2,19 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Especialidad'; // esto debería estar en singular
     let cols = {
         id: {
-            type: dataTypes.INT,
+            type: dataTypes.BIGINT(10).UNSIGNED,
             primaryKey: true,
             allowNull: false,
             autoIncrement: true
         },
         especialidad: {
-            type: dataTypes.VARCHAR(100),
+            type: dataTypes.STRING(100),
             allowNull: false
         }};
     let config = {
         timestamps: false,
-        deletedAt: false
+        deletedAt: false,
+        tableName: 'especialidades'
     }
     const Especialidad = sequelize.define(alias,cols,config);
 
@@ -26,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: 'id_terap',
             timestamps: false
         })
-    }
+    };
 
     return Especialidad;
 };

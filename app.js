@@ -9,8 +9,9 @@ const session = require('express-session')
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
 const terapeutasRouter = require('./routes/terapeutas');
+const userLoggedMiddleware = require('./public/js/userLoggedMiddleware');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 
 const app = express();
 
@@ -21,9 +22,10 @@ app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookies());
 app.use(session( {secret: "Acceso seguro Coralio", resave: false, saveUninitialized: false} ));
+app.use(userLoggedMiddleware);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

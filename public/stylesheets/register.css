@@ -1,3 +1,16 @@
+:root {
+    --coral: #FF848B;
+    --coralFuerte: #F8332B;
+    --coralClaro: #FFD0C6;
+    --naranjaClaro: #FF8160;
+    --amarilloClaro: #FFEBAC;
+    --naranja: #F76C31;
+    --backgroundColor: #FF833F;
+  
+    --fuentePrincipal: 'Montserrat', sans-serif;
+    --fuenteSecundaria: helvetica;
+  }
+
 .main-terap-register, .main-login-register{
     margin: auto;
     margin-top: 130px;
@@ -31,9 +44,10 @@
     text-align: start;
     width: 80%;
     margin: auto;
+    flex-wrap: wrap;
 }
 .especialidades label{
-    font-size: 1.5rem;
+    font-size: 1rem;
     display: inline;
     width: 50%;
 }
@@ -112,6 +126,7 @@
 
 .form-terap, .form-login{
     display: flex;
+    flex-wrap: wrap;
 }
 
 .col1, .col2{
