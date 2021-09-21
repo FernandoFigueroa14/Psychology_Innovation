@@ -13,15 +13,15 @@ const loginController = {
     login: (req, res) => {
         res.render(path.resolve(__dirname,'../views/login'), {title: 'Inicia sesión'});
     },
-    processLogin: async (req, res) => {
+    processLogin: (req, res) => {
         //let terapToLogin = modelTerap.findByField('emailTerap', req.body.email);
-        let terapToLogin = await Terapeutas.findOne({
+        let terapToLogin = Terapeutas.findOne({
             where:{
                 email: req.body.email
             }
         });
 
-        let userToLogin = await Usuarios.findOne({
+        let userToLogin = Usuarios.findOne({
             where:{
                 email: req.body.email
             }
