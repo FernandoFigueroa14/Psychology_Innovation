@@ -4,6 +4,7 @@ module.exports = {
      "password": 'PsycoInova-21',
      "database": "coralio",
      "host": "coralio.ccr63migrrcg.us-east-1.rds.amazonaws.com",
+     "port": "3306"
      "dialect": "mysql"
   },
   /*
