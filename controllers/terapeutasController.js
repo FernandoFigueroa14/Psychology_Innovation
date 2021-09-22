@@ -75,9 +75,9 @@ const terapeutasController = {
                             contraseña: bcryptjs.hashSync(req.body.passwordTerap, 10),
                             cedula: req.body.cedulaTerap,
                             descripcion: req.body.descriptionTerap,
-                            linkVideo: req.files.videoTerap[0].path,
-                            linkTitulo: req.files.tituloTerap[0].path,
-                            linkImagen: req.files.fotoTerap[0].path,
+                            linkVideo: req.files.videoTerap[0].filename,
+                            linkTitulo: req.files.tituloTerap[0].filename,
+                            linkImagen: req.files.fotoTerap[0].filename,
                             createdAt: hoy.getFullYear() + '-' + hoy.getMonth() + '-' + hoy.getDay() + ' ' + hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds(),
                             updatedAt: hoy.getFullYear() + '-' + hoy.getMonth() + '-' + hoy.getDay() + ' ' + hoy.getHours() + ':' + hoy.getMinutes() + ':' + hoy.getSeconds()
                         }

@@ -12,7 +12,7 @@
         <section class="row">
             <% terapeutas.forEach(terapeuta => { %>
                 <article class="col-4">
-                    <img src="<%= terapeuta.linkImagen%>" alt="img-terap">
+                    <img src="/images/profilePicTerap/<%= terapeuta.linkImagen%>" alt="img-terap">
                     <div>
                         <h4><%= terapeuta.nombres + terapeuta.apellidos %></h4>
                         <h5><%= terapeuta.cedula%></h5>
