@@ -5,7 +5,7 @@ const Usuarios = db.Usuario;
 
 function userLoggedMiddleware(req, res, next){
     let cookieEmail = req.cookies.email;
-/*
+
     let terapFromCookie =  Terapeutas.findOne({
         where:{
             email: cookieEmail
@@ -24,7 +24,7 @@ function userLoggedMiddleware(req, res, next){
                     req.session.Logged = terap;
                 }
             })
-            .catch(error => res.send(error));*/
+            .catch(error => res.send(error));
     next();
 }
 

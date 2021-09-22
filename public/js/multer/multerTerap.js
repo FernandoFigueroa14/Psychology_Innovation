@@ -5,11 +5,11 @@ const path  = require('path');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       if(path.extname(file.originalname)=='.mp4'){
-        cb(null, 'public/images/videos');
+        cb(null, path.resolve(__dirname ,'../../images/videos'));
       } else if(path.extname(file.originalname)=='.pdf'){
-        cb(null, 'public/images/titulos');
+        cb(null, path.resolve(__dirname ,'../../images/titulos'));
       } else if(path.extname(file.originalname)=='.jpg' || path.extname(file.originalname)=='.png'){
-        cb(null, 'public/images/profilePicTerap');
+        cb(null, path.resolve(__dirname ,'../../images/profilePicTerap'));
       }
     },
     filename: function (req, file, cb) {
