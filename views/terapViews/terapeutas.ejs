@@ -7,7 +7,20 @@
     <!-- header --> 
     <%- include('../partials/header') %>
     <!-- /header -->
-    <h1>Terapeutas</h1>
+    <main class="container">
+        <h1>Terapeutas</h1>
+        <section class="row">
+            <% terapeutas.forEach(terapeuta => { %>
+                <article class="col-4">
+                    <img src="<%= terapeuta.linkImagen%>" alt="img-terap">
+                    <div>
+                        <h4><%= terapeuta.nombres + terapeuta.apellidos %></h4>
+                        <h5><%= terapeuta.cedula%></h5>
+                    </div>
+                </article>
+            <%})%>
+        </section>
+    </main>
     <!-- footer -->
     <%- include('../partials/footer') %>
     <!-- /footer -->

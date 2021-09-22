@@ -22,8 +22,8 @@ const terapeutasController = {
             include: ['especialidad']
         })
             .then(terapeutas => {
-                res.render(path.resolve(__dirname,'../views/terapViews/terapeutas'), {title: 'Terapeutas'});
-                console.log(terapeutas);
+                res.render(path.resolve(__dirname,'../views/terapViews/terapeutas'), {title: 'Terapeutas', terapeutas});
+                //console.log(terapeutas);
             })
     },
     terapeutasDetalle: (req, res) => {
