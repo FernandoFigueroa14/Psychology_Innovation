@@ -34,7 +34,28 @@ const loginController = {
                     console.log(validationPassword);
                     if(validationPassword){
                         //delete terap.passwordTerap;
-                        req.session.Logged = terap;
+                        req.session.terapLogged = terap;
+        
+                        if(req.body.remember_user){
+                            res.cookie('email', req.body.email, {maxAge: (1000*60)*60});
+                        }
+        
+                        return res.redirect('/terap/profile');
+                    }else{
+                        return res.render(path.resolve('views/login'), {title: 'Inicia sesión',
+                            errors: {
+                                email: {
+                                    msg: 'Las credenciales son inválidas'
+                                }
+                            }
+                        })
+                    }
+                }else if(user){
+                    let validationPassword = bcryptjs.compareSync(req.body.password, user.contraseña);
+                    console.log(validationPassword);
+                    if(validationPassword){
+                        //delete user.passwordTerap;
+                        req.session.userLogged = user;
         
                         if(req.body.remember_user){
                             res.cookie('email', req.body.email, {maxAge: (1000*60)*60});

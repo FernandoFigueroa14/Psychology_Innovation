@@ -29,6 +29,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DATEONLY,
             allowNull: false
         },
+        linkImagen: {
+            type: dataTypes.STRING(1000),
+            allowNull: false
+        },
         createdAt: dataTypes.DATE,
         updatedAt: dataTypes.DATE,
     };

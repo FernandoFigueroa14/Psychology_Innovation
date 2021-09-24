@@ -111,7 +111,7 @@ const terapeutasController = {
 
         console.log(req.cookies.email);
 
-        res.render(path.resolve('views/terapViews/terapProfile'), {title: 'Perfil', user: req.session.Logged});
+        res.render(path.resolve('views/terapViews/terapProfile'), {title: 'Perfil', user: req.session.terapLogged});
     },
     logout: (req, res) => {
         res.clearCookie('email');

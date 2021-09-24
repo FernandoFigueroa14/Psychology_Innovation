@@ -98,15 +98,15 @@
 }
 
 #button-register{
-    width: 40%;
+    width: 80%;
     margin: auto;
-    margin-top: 20px;
+    margin-top: 65px;
 }
 
 #button-register button{
     margin: auto;
     width: 100%;
-    font-size: 2rem;
+    font-size: 1.5rem;
     transition: all 0.5s;
 }
 
@@ -146,5 +146,10 @@
     }
     .especialidades label{
         width: 100%;
+    }
+    #button-register{
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
     }
 }

@@ -11,7 +11,7 @@
 # production
 /build
 
-/database/config
+#/database/config
 
 # misc
 .env
@@ -26,4 +26,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #config DB
-config.js
+#config.js

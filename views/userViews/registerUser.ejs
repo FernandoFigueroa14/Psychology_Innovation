@@ -7,9 +7,115 @@
     <!-- header --> 
     <%- include('../partials/header') %>
     <!-- /header -->
-    <h1>Registrate</h1>
+    <main>
+        <section class="main-terap-register container">
+            <h1>Crea tu cuenta</h1>
+            <div id="terap-register">
+                <form action="/user/register" method="POST" enctype="multipart/form-data" class="form-terap">
+                    <div class="col1">
+                        <div class="form-control-register">
+                            <label for="nameUser">Nombre(s)</label>
+                            <input type="text" name="nameUser" placeholder="Nombre(s)" minlength="3" value="<%=locals.oldData ? oldData.nameUser : ''%>">
+                        </div>
+                        <%if(locals.errors && errors.nameUser){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.nameUser.msg %></p>
+                        <%}%>
+                        <div class="form-control-register">
+                            <label for="lastnameUser">Apellidos</label>
+                            <input type="text" name="lastnameUser" placeholder="Apellidos" minlength="3" value="<%=locals.oldData ? oldData.lastnameUser : ''%>">
+                        </div>
+                        <%if(locals.errors && errors.lastnameUser){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.lastnameUser.msg %></p>
+                        <%}%>
+                        <div class="form-control-register">
+                            <label for="emailUser">Correo electrónico</label>
+                            <input type="email" name="emailUser" placeholder="Correo electrónico" minlength="8" value="<%=locals.oldData ? oldData.emailUser : ''%>">
+                        </div>
+                        <%if(locals.errors && errors.emailUser){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.emailUser.msg %></p>
+                        <%}%>
+                        <div class="form-control-register">
+                            <label for="fotoUser"> Foto de perfil</label>
+                            <label class="form-block-input">
+                                <input type="file" name="fotoUser" class="form-file fotoUser" id="fotoUser" accept=".jpg, .png">
+                                <div class="file-button">
+                                    <button class="form-file-button"><i class="fas fa-image"></i></button>
+                                    <span class="form-file-span">Selecciona un archivo</span>
+                                </div>
+                             </label>
+                        </div>
+                        <%if(locals.errors && errors.fotoUser){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.fotoUser.msg %></p>
+                        <%}%>
+                    </div>
+                        
+                    <div class="col2">
+                        <div class="form-control-register">
+                            <label for="passwordUser">Contraseña</label>
+                            <input type="password" name="passwordUser" placeholder="Contraseña" minlength="8">
+                        </div>
+                        <%if(locals.errors && errors.passwordUser){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.passwordUser.msg %></p>
+                        <%}%>
+                        <div class="form-control-register">
+                            <label for="passwordConfirmUser">Confirmación de contraseña</label>
+                            <input type="password" name="passwordConfirmUser" placeholder="Confirmación de contraseña" minlength="8">
+                        </div>
+                        <%if(locals.errors && errors.passwordConfirmUser){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.passwordConfirmUser.msg %></p>
+                        <%}%>
+                        <div class="form-control-register">
+                            <label for="bdayUser">Fecha de nacimiento</label>
+                            <input type="date" name="bdayUser" value="<%=locals.oldData ? oldData.bdayUser : ''%>">
+                        </div>
+                        <%if(locals.errors && errors.bdayUser){%>
+                            <p class='errors-style'><i class="fas fa-exclamation-circle"></i>   <%= errors.bdayUser.msg %></p>
+                        <%} %>  
+                        <div id="button-register">
+                            <button class="file-button" type="submit">Crear tu cuenta</button>
+                        </div>
+                
+                    </div>
+        
+                </form>
+            </div>
+        </section>
+    </main>
     <!-- footer -->
     <%- include('../partials/footer') %>
     <!-- /footer -->
+    <script>// Ejecutar hasta que se haya cargado la página
+        document.addEventListener('DOMContentLoaded', () => {
+            // Obtener inputs tipo file y sus botones para poder asignar eventos
+            const fileInputs = document.querySelectorAll('input[type=file]');
+            const fileButtons = document.querySelectorAll('.form-file-button');
+            // Asignar eventos a inputs y botones
+            fileInputs.forEach(file => file.addEventListener('change', fileChange));
+            fileButtons.forEach(button => button.addEventListener('click', fileClick));
+        });
+        
+        // Cambios en inputs
+        function fileChange(e) {
+            // e - es el evento
+            // e.target - es el elemento que lo disparó
+            // .closest() - permite acceder al padre (label)
+            // desde el padre se obtiene el contenedor para mostrar archivos
+            let input = e.target;
+            let spanBlock = e.target.closest('label').querySelector('.form-file-span');
+            // Limpiar contenedor
+            spanBlock.innerHTML = '';
+            // Recorrer archivos para agregarlos al contenedor
+            Array.from(input.files).forEach(file => {
+                spanBlock.innerHTML += `<span class="form-files">${file.name}</span>`;
+            });
+        }
+        
+        // Clics en botones
+        function fileClick(e) {
+            // Desde el botón se obtiene el input y se abre la ventana para seleccionar archivos
+            let input = e.target.closest('label').querySelector('input');
+            input.click();
+        }
+    </script>
 </body>
 </html>
