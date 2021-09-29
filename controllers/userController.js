@@ -78,7 +78,7 @@ const userController = {
         console.log(req.cookies.email);
 
         console.log(req.session.userLogged);
-        res.render(path.resolve('views/terapViews/terapProfile'), {title: 'Perfil', user: req.session.userLogged});
+        res.render(path.resolve('views/userViews/userProfile'), {title: 'Perfil', user: req.session.userLogged});
     },
     logout: (req, res) => {
         res.clearCookie('email');

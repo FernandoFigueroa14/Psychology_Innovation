@@ -1,5 +1,5 @@
 module.exports = {
- "development": {
+ /*"development": {
     "username": "admin",
     "password": 'PsycoInova-21',
     "database": "coralio",
@@ -7,7 +7,7 @@ module.exports = {
     "port": "3306",
     "dialect": "mysql"
  },
- /*
+ */
  "development": {
    "username": "ferfigue14",
    "password": 'root',
@@ -15,7 +15,7 @@ module.exports = {
    "host": "127.0.0.1",
    "port": "3307",
    "dialect": "mysql"
- },*/
+ },
  "test": {
    "username": "admin",
    "password": 'PsycoInova-21',
