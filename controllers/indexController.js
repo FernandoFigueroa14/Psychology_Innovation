@@ -11,6 +11,9 @@ const indexController = {
     },
     faqs: (req, res) => {
         res.render(path.resolve('views/faqs'), {title: 'FAQs'});
+    },
+    blog: (req, res) => {
+        res.render(path.resolve('views/blog'), {title: 'Blog'});
     }
 }
 

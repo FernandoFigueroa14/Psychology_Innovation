@@ -10,6 +10,7 @@ router.get('/', indexController.home);
 
 router.get('/index', indexController.home);
 router.get('/faqs', indexController.faqs);
+router.get('/blog', indexController.blog);
 
 router.get('/login', guestMiddleware, loginController.login);
 router.post('/login', loginController.processLogin);
