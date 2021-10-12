@@ -7,16 +7,44 @@
     <!-- header --> 
     <%- include('../partials/header') %>
     <!-- /header -->
-    <main class="container">
-        <h1>Terapeutas</h1>
+    <main class="container-sm">
+        <h1>Encuentra el mejor Psicologo para ti</h1>
         <section class="row">
             <% terapeutas.forEach(terapeuta => { %>
-                <article class="col-12 col-md-4">
-                    <!-- <%= terapeuta.linkImagen%> -->
-                    <img src="images/profilePicTerap/<%= terapeuta.linkImagen%>" alt="img-terap"> 
-                    <div>
-                        <h4><%= terapeuta.nombres + terapeuta.apellidos %></h4>
-                        <h5><%= terapeuta.cedula%></h5>
+                <article class="col-12 p-3">
+                    <div class="container bg-light shadow border border-secondary rounded p-3">
+                        <div class="row">
+                            <div class="col-7">
+                                <!-- <%= terapeuta.linkImagen%> -->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-5 d-flex flex-column justify-content-center align-items-center">
+                                            <img width="70%" class="img-fluid py-3" style="border-radius: 50%;" src="images/profilePicTerap/<%= terapeuta.linkImagen%>" alt="img-terap">
+                                            <button type="button" class="btn btn-primary py-2">
+                                                Agendar
+                                            </button>
+                                        </div>
+                                        
+                                        <div class="col-7">
+                                            <div>
+                                                <h4><%= terapeuta.nombres + ' ' + terapeuta.apellidos %></h4>
+                                                <h5><%= terapeuta.cedula%></h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-5">
+                                <h4>Video</h4>
+                                <video class="rounded" width="90%" controls>
+                                    <source src="images/videos/<%= terapeuta.linkVideo%>" type="video/mp4">
+                                  Your browser does not support the video tag.
+                                </video>
+                            </div>
+
+                        </div>
                     </div>
                 </article>
             <%})%>
