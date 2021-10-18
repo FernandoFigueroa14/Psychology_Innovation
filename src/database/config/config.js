@@ -1,9 +1,9 @@
 module.exports = {
  "development": {
     "username": "admin",
-    "password": 'PsycoInova-21',
+    "password": 'BasededatosP',
     "database": "coralio",
-    "host": "coralio.ccr63migrrcg.us-east-1.rds.amazonaws.com",
+    "host": "personalDB.ccr63migrrcg.us-east-1.rds.amazonaws.com",
     "port": "3306",
     "dialect": "mysql"
  },
@@ -18,17 +18,17 @@ module.exports = {
  },*/
  "test": {
    "username": "admin",
-   "password": 'PsycoInova-21',
+   "password": 'BasededatosP',
    "database": "coralio",
-   "host": "coralio.ccr63migrrcg.us-east-1.rds.amazonaws.com",
+   "host": "personalDB.ccr63migrrcg.us-east-1.rds.amazonaws.com",
    "port": "3306",
    "dialect": "mysql"
 },
  "production": {
    "username": "admin",
-   "password": 'PsycoInova-21',
+   "password": 'BasededatosP',
    "database": "coralio",
-   "host": "coralio.ccr63migrrcg.us-east-1.rds.amazonaws.com",
+   "host": "personalDB.ccr63migrrcg.us-east-1.rds.amazonaws.com",
    "port": "3306",
    "dialect": "mysql"
 }
