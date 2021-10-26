@@ -18,19 +18,14 @@ const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
 const terapeutasController = {
     terapeutas: (req, res) => {
-        Terapeutas.findAll({
-            include: ['especialidad']
-        })
+        Terapeutas.findAll()
             .then(terapeutas => {
                 res.render(path.resolve(__dirname,'../views/terapViews/terapeutas'), {title: 'Terapeutas', terapeutas});
-                //console.log(terapeutas);
+                // console.log(terapeutas[0].especialidades.split(','));
             })
     },
     terapeutasDetalle: (req, res) => {
-        Terapeutas.findByPk(req.params.id,
-            {
-                include : ['especialidad']
-            })
+        Terapeutas.findByPk(req.params.id)
             .then(terapeuta => {
                 res.render(path.resolve(__dirname,'../views/terapViews/terapeutaDetalle.ejs'),  {title: 'Detalle del Terapeuta', terapeuta});
             });
@@ -67,7 +62,9 @@ const terapeutasController = {
                 }else{
                     
                     let hoy = new Date();
-            
+                    
+                    // console.log(req.body);
+
                     Terapeutas.create({
                             nombres: req.body.nameTerap,
                             apellidos: req.body.lastnameTerap,
@@ -75,6 +72,7 @@ const terapeutasController = {
                             contraseña: bcryptjs.hashSync(req.body.passwordTerap, 10),
                             cedula: req.body.cedulaTerap,
                             descripcion: req.body.descriptionTerap,
+                            especialidades: req.body.especialidad.toString(),
                             linkVideo: req.files.videoTerap[0].filename,
                             linkTitulo: req.files.tituloTerap[0].filename,
                             linkImagen: req.files.fotoTerap[0].filename,

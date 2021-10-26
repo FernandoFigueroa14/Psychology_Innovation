@@ -31,6 +31,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(200),
             allowNull: false
         },
+        especialidades:{
+            type: dataTypes.STRING,
+            allowNull: false
+        },
         linkVideo: {
             type: dataTypes.STRING(1000),
             allowNull: false
@@ -56,13 +60,6 @@ module.exports = (sequelize, dataTypes) => {
     const Terapeuta = sequelize.define(alias,cols,config);
 
     Terapeuta.associate = function (models) {
-        Terapeuta.belongsToMany(models.Especialidad, { // models.Genre -> Genres es el valor de alias en genres.js
-            as: "especialidad",
-            through: 'terap_especialidades',
-            foreignKey: 'id_terap',
-            otherKey: 'id_especialidad',
-            timestamps: false
-        });
 
         Terapeuta.belongsToMany(models.Usuario, { // models.Actor -> Actors es el valor de alias en actor.js
             as: "usuario",

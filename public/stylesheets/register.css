@@ -140,6 +140,17 @@
     text-align: center;
 }
 
+.selected{
+    color: black;
+    border-bottom: darkorchid 2px solid;
+    cursor: pointer;
+}
+
+.no-selected{
+    color: gray;
+    cursor: pointer;
+}
+
 @media (max-width: 480px) {
     .col1, .col2{
         width: 100%;
