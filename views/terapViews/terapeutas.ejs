@@ -205,13 +205,13 @@
 													</div>
 												</div>
 											</div>
-											----------
+						
                                             <% terapeutas.forEach(terapeuta => { %>
                                             <div class="card bgc-platinum border-0">
 												<div class="card-body">
 													<div class="row">
 														<div class="col-lg-2">
-															<img src="/images/lazyload-ph.png" data-src="/images/Angel-Icono.jpg" class="img-fluid img-protected rounded-circle mx-auto d-block img-22-style mg-sm lazyload" alt="Angel Icono" />
+															<img src="/images/lazyload-ph.png" data-src="/images/profilePicTerap/<%= terapeuta.linkImagen%>" class="img-fluid img-protected rounded-circle mx-auto d-block img-22-style mg-sm lazyload" alt="Angel Icono" />
 															<h2 class="h2-angel-k--style mg-sm mx-auto d-block text-lg-center tc-black">
 																<strong>Calificado</strong>
 															</h2>
@@ -254,7 +254,7 @@
 														</div>
 														<div class="col-lg-3">
 																		<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
-																			<strong>Angel K.</strong>
+																			<strong><%= `${terapeuta.nombres} ${terapeuta.apellidos}` %></strong>
 																		</h2>
 																		<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
 																			Psicológo
@@ -263,7 +263,12 @@
 																			<strong>Especialidades:</strong><br>
 																		</h2>
 																		<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
-																			Psicología cognitiva
+																			<ul>
+                                                                                <%const especialidades = terapeuta.especialidades.split(",");%>
+                                                                                <% especialidades.forEach(especialidad => { %>
+                                                                                    <li><%=especialidad%></li>
+                                                                                <%})%>
+                                                                            </ul>
 																		</h3>
 																		<div class="row">
 																			<div class="col">
@@ -303,13 +308,13 @@
 																			<div class="tab-pane fade show active" id="nav-49361-content-1" role="tabpanel" aria-labelledby="nav-49361-content-1">
 																				<div class="embed-responsive embed-responsive-16by9">
 																					<video controls class="embed-responsive-item lazyload" data-src="/vid/video-placeholder.mp4">
-																						<source src="/images/lazyload-ph.png" data-src="/vid/video-placeholder.mp4" type="video/mp4" />Your browser does not support HTML5 video.
+																						<source src="/images/lazyload-ph.png" data-src="images/videos/<%= terapeuta.linkVideo%>" type="video/mp4" />Your browser does not support HTML5 video.
 																					</video>
 																				</div>
 																			</div>
 																			<div class="tab-pane fade-tab-bs" id="nav-49361-content-2" role="tabpanel" aria-labelledby="nav-49361-content-2">
 																				<p class="mx-auto d-block p-5-style">
-																					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+																					<%= terapeuta.descripcion%>
 																				</p>
 																			</div>
 																			<div class="tab-pane fade-tab-bs" id="nav-49361-content-3" role="tabpanel" aria-labelledby="nav-49361-content-3">
@@ -328,6 +333,8 @@
 																<span class="divider"></span>
 															</div>
                                                             <%})%>
+                                                        </div>
+                                                    </div>
 		<div class="row">
 																						<div class="col">
 																							<div><div class="text-center">
