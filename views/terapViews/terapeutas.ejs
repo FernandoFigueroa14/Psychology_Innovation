@@ -3,105 +3,609 @@
 <!-- head --> 
 <%- include('../partials/head', {title: title}) %>
 <!-- /head -->
-<body>
+
+<body data-clean-url="true" class="mob-disable-anim ">
+
+    <!-- Preloader -->
+<div id="page-loading-blocs-notifaction" class="page-preloader"></div>
+<!-- Preloader END -->
+
+<div class="page-container">
     <!-- header --> 
     <%- include('../partials/header') %>
     <!-- /header -->
-    <main class="container-sm">
-        <h1>Encuentra el mejor Psicologo para ti</h1>
-        <section class="row">
-            <% terapeutas.forEach(terapeuta => { %>
-                <article class="col-12 p-3">
-                    <div class="container bg-light border border-secondary rounded p-3">
-                        <div class="row">
-                            <div class="col-7 d-flex align-items-center">
-                                <!-- <%= terapeuta.linkImagen%> -->
-                                <div class="container" style="border-right: gainsboro 1px solid;">
-                                    <div class="row">
-                                        <div class="col-5 d-flex flex-column justify-content-center align-items-center">
-                                            <img width="70%" class="img-fluid py-3" style="border-radius: 50%;" src="images/profilePicTerap/<%= terapeuta.linkImagen%>" alt="img-terap">
-                                            <button type="button" class="btn btn-primary py-2">
-                                                Agendar
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="col-7">
-                                            <div>
-                                                <h5><%= `${terapeuta.nombres} ${terapeuta.apellidos}` %></h5>
-                                                
-                                                <p style="color: gray;">TERAPEUTA PROFESIONAL</p>
+    
+<!-- bloc-13 -->
+<div class="bloc tc-black" id="bloc-13">
+	<div class="container bloc-no-padding-lg bloc-no-padding-md bloc-no-padding">
+		<div class="row">
+			<div class="col">
+				<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+				</div>
+				<h2 class="mg-md mx-auto d-block h2-bloc-13-style">
+						<strong>Encuentra el mejor Psicólogo para ti</strong>
+					</h2>
+				<h3 class="mg-md h3-bloc-13-style mx-auto d-block">
+						Encuentra el mejor terapeuta para ti: elige entre nuestros distintos psicólogos expertos y recibe la mejor terapia online.
+					</h3>
+				<div class="card bgc-opera-mauve fondo">
+						<div class="card-body">
+							<h6 class="mg-md mx-auto d-block h6-bloc-13-style tc-white">
+								<strong>Terapia instantánea</strong>
+							</h6>
+							<h5 class="mg-md tc-white h5-bloc-13-style">
+								¿Buscas Terapia en este momento? ¡Encuentra un terapeuta que este disponible y empieza a sanar!
+							</h5>
+						</div>
+					</div>
+				<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+					</div>
+			</div>
+		</div>
+		<div class="row">
+					<div class="col-lg-3 col-md-12">
+						<div class="card bgc-opera-mauve border-0">
+							<div class="card-body">
+								<h2 class="h2-angel-k--style mg-sm mx-auto d-block text-lg-center tc-black text-md-center text-sm-center text-center">
+									<strong>Filtrar por</strong><br>
+								</h2>
+								<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#E5CFE3" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M2,25H498"></path></svg>
+</div>
+								</div>
+								<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+										Disponibilidad
+									</h3>
+								<div><div id="be-date-picker-ID" class="input-group datepicker" data-lang="en" data-inputid="date" data-weekstart="monday" data-dateformat="DD.MM.YYYY" data-calendarwidth="450px" data-infobox="1" data-fontfamily="" data-datepickercolor="#B083BD">
+    <input type="text" id="date" class="form-control datepicker-input-field">
 
-                                                <h6 style="color: gray;">CÉDULA PROFESIONAL</h6>
-                                                <p><%= terapeuta.cedula%></p>
-                                                
-                                                <h6 style="color: gray;">ESPECIALIDADES</h6>
-                                                <ul>
-                                                    <%const especialidades = terapeuta.especialidades.split(",");%>
-                                                    <% especialidades.forEach(especialidad => { %>
-                                                        <li><%=especialidad%></li>
-                                                    <%})%>
-                                                </ul>
-                                                
-                                                
+</div>
+									</div>
+								<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#E5CFE3" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M2,25H498"></path></svg>
+</div>
+										</div>
+								<h2 class="h2-angel-k--style mx-auto d-block text-lg-center mg-md tc-black text-sm-center text-center">
+												<strong>Especialidad</strong><br>
+											</h2>
+								<div class="row">
+												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label">
+														</label>
+													</div>
+												</div>
+												<div class="col align-self-center">
+													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
+														Depresión
+													</h3>
+												</div>
+											</div>
+								<div class="row">
+												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label">
+														</label>
+													</div>
+												</div>
+												<div class="col align-self-center">
+													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
+														Ansiedad
+													</h3>
+												</div>
+											</div>
+								<div class="row">
+												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label">
+														</label>
+													</div>
+												</div>
+												<div class="col align-self-center">
+													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
+														Autoestima
+													</h3>
+												</div>
+											</div>
+								<div class="row">
+												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label">
+														</label>
+													</div>
+												</div>
+												<div class="col align-self-center">
+													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
+														Terapia de Parejas
+													</h3>
+												</div>
+											</div>
+								<div class="row">
+												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label">
+														</label>
+													</div>
+												</div>
+												<div class="col align-self-center">
+													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
+														Desarollo Personal
+													</h3>
+												</div>
+											</div>
+								<div class="row">
+												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label">
+														</label>
+													</div>
+												</div>
+												<div class="col align-self-center">
+													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
+														Transtorno Alimenticio
+													</h3>
+												</div>
+											</div>
+								<div class="row">
+												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
+													<div class="form-check">
+														<input class="form-check-input" type="checkbox" />
+														<label class="form-check-label">
+														</label>
+													</div>
+												</div>
+												<div class="col align-self-center">
+													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
+														Terapia Familiar
+													</h3>
+												</div>
+											</div>
+								<div class="row">
+												<div class="col">
+													<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="#E5CFE3" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M2,25H498"></path></svg>
+</div>
+													</div>
+													<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-center text-md-center text-sm-center text-center">
+															Modelo Terapeutico
+														</h3>
+												</div>
+											</div>
+							</div>
+						</div>
+						<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+										</div>
+					</div>
+					<div class="col-lg-9 col-md-12">
+											<div class="row">
+												<div class="col-12 col-lg-5">
+													<div class="form-group">
+														<div class="form-group">
+															<input class="form-control" id="input_2392" placeholder="Busca tu psicólogo" />
+														</div>
+													</div>
+												</div>
+												<div class="col">
+													<div class="form-group">
+														<div class="form-group">
+															<input class="form-control" placeholder="Terapias recientes" />
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="card bgc-platinum border-0">
+												<div class="card-body">
+													<div class="row">
+														<div class="col-lg-2">
+															<img src="/images/lazyload-ph.png" data-src="/images/Angel-Icono.jpg" class="img-fluid img-protected rounded-circle mx-auto d-block img-22-style mg-sm lazyload" alt="Angel Icono" />
+															<h2 class="h2-angel-k--style mg-sm mx-auto d-block text-lg-center tc-black">
+																<strong>Calificado</strong>
+															</h2>
+															<div><label style="color:rgba(0,0,0,.5);" class="rating-label"></label>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
+<div class="rating">
+	<span class="rating-score" style="width: 100%;">
+		<svg fill="#B083BD" width="100.00" height="33.333333333333336">
+			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-rating"></use>
+		</svg>
+	</span>
+	<span class="rating-empty">
+		<svg fill="rgba(0,0,0,.1)" width="100.00" height="33.333333333333336">
+			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-rating"></use>
+		</svg>
+	</span>
+</div>
 
-                            <div class="col-5">
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-between px-5">
-                                            <h5 onclick="video(this)" class="selected">Video</h5><h5 class="no-selected" onclick="descrip(this)">Descripción</h5><h5 class="no-selected" onclick="dispo(this)">Disponibilidad</h5>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-center pt-3">
-                                    <video class="rounded" width="75%" height="100%" controls>
-                                        <source src="images/videos/<%= terapeuta.linkVideo%>" type="video/mp4">
-                                      Your browser does not support the video tag.
-                                    </video>
-                                </div>
-                            </div>
+<svg xmlns="http://www.w3.org/2000/svg" display="none" version="1.1" height="0">
+		<symbol id="star-rating" viewBox="0 0 240 48">
+			<polygon points="24 35 12.244 41.18 14.489 28.09 4.979 18.82 18.122 16.91 24 5 29.878 16.91 43.021 18.82 33.511 28.09 35.756 41.18"></polygon>
+			<polygon points="72 35 60.244 41.18 62.489 28.09 52.979 18.82 66.122 16.91 72 5 77.878 16.91 91.021 18.82 81.511 28.09 83.756 41.18"></polygon>
+			<polygon points="120 35 108.244 41.18 110.489 28.09 100.979 18.82 114.122 16.91 120 5 125.878 16.91 139.021 18.82 129.511 28.09 131.756 41.18"></polygon>
+			<polygon points="168 35 156.244 41.18 158.489 28.09 148.979 18.82 162.122 16.91 168 5 173.878 16.91 187.021 18.82 177.511 28.09 179.756 41.18"></polygon>
+			<polygon points="216 35 204.244 41.18 206.489 28.09 196.979 18.82 210.122 16.91 216 5 221.878 16.91 235.021 18.82 225.511 28.09 227.756 41.18"></polygon>
+		</symbol>
+</svg>
+															</div>
+															<h3 class="h3-psicologo-style mx-auto d-block text-lg-center mg-clear">
+																	2 Clases
+																</h3>
+															<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+																</div><a class="btn btn-block btn-opera-mauve">Reservar</a>
+															<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+																	</div><span class="far fa-heart icon-opera-mauve float-lg-none icon-sm"></span>
+														</div>
+														<div class="col-lg-3">
+																		<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																			<strong>Angel K.</strong>
+																		</h2>
+																		<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																			Psicológo
+																		</h3>
+																		<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																			<strong>Especialidades:</strong><br>
+																		</h2>
+																		<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																			Psicología cognitiva
+																		</h3>
+																		<div class="row">
+																			<div class="col">
+																				<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																					<strong>Precio:</strong><br>
+																				</h2>
+																				<h3 class="h3-psicologo-style mg-sm mx-auto d-block text-lg-left">
+																					$245.00
+																				</h3>
+																			</div>
+																			<div class="col">
+																				<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																					<strong>Prueba</strong><br>
+																				</h2>
+																				<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																					$80.00
+																				</h3>
+																			</div>
+																		</div>
+																	</div>
+														<div class="col">
+																		<ul class="nav nav-tabs" id="nav-49361-tab" role="tablist">
+																			<li class="nav-item">
+																				<a class="a-btn nav-link active ltc-black" id="nav-49361-tab-1" data-toggle="tab" href="#nav-49361-content-1" role="tab" aria-controls="nav-49361-content-1" aria-selected="true">Video</a>
+																			</li>
+																			<li class="nav-item">
+																				<a class="a-btn nav-link ltc-black" id="nav-49361-tab-2" data-toggle="tab" href="#nav-49361-content-2" role="tab" aria-controls="nav-49361-content-2" aria-selected="false">Presentación</a>
+																			</li>
+																			<li class="nav-item">
+																				<a class="a-btn nav-link ltc-black" id="nav-49361-tab-3" data-toggle="tab" href="#nav-49361-content-3" role="tab" aria-controls="nav-49361-content-3" aria-selected="false">Calendario</a>
+																			</li>
+																		</ul>
+																		<div class="tab-content">
+																			<div class="divider-h divider-bloc-13-padding">
+																				<span class="divider"></span>
+																			</div>
+																			<div class="tab-pane fade show active" id="nav-49361-content-1" role="tabpanel" aria-labelledby="nav-49361-content-1">
+																				<div class="embed-responsive embed-responsive-16by9">
+																					<video controls class="embed-responsive-item lazyload" data-src="/vid/video-placeholder.mp4">
+																						<source src="/images/lazyload-ph.png" data-src="/vid/video-placeholder.mp4" type="video/mp4" />Your browser does not support HTML5 video.
+																					</video>
+																				</div>
+																			</div>
+																			<div class="tab-pane fade-tab-bs" id="nav-49361-content-2" role="tabpanel" aria-labelledby="nav-49361-content-2">
+																				<p class="mx-auto d-block p-5-style">
+																					Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+																				</p>
+																			</div>
+																			<div class="tab-pane fade-tab-bs" id="nav-49361-content-3" role="tabpanel" aria-labelledby="nav-49361-content-3">
+																				<div><div id="be-date-picker-ID" class="input-group datepicker" data-lang="en" data-inputid="date" data-weekstart="monday" data-dateformat="DD.MM.YYYY" data-calendarwidth="500.00px" data-infobox="1" data-fontfamily="" data-datepickercolor="#AD80B9">
+    <input type="text" id="date" class="form-control datepicker-input-field">
 
-                        </div>
-                    </div>
-                </article>
-            <%})%>
-        </section>
-    </main>
+</div>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+													</div>
+												</div>
+											</div>
+											<div class="divider-h divider-bloc-13-padding">
+																<span class="divider"></span>
+															</div>
+											<div class="card bgc-platinum border-0">
+																<div class="card-body">
+																	<div class="row">
+																		<div class="col-lg-2">
+																			<img src="/images/lazyload-ph.png" data-src="/images/Angel-Icono.jpg" class="img-fluid img-protected rounded-circle mx-auto d-block img-22-style mg-sm lazyload" alt="Angel Icono" />
+																			<h2 class="h2-angel-k--style mg-sm mx-auto d-block text-lg-center tc-black">
+																				<strong>Calificado</strong>
+																			</h2>
+																			<div><label style="color:rgba(0,0,0,.5);" class="rating-label"></label>
+
+<div class="rating">
+	<span class="rating-score" style="width: 100%;">
+		<svg fill="#B083BD" width="100.00" height="33.333333333333336">
+			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-rating"></use>
+		</svg>
+	</span>
+	<span class="rating-empty">
+		<svg fill="rgba(0,0,0,.1)" width="100.00" height="33.333333333333336">
+			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-rating"></use>
+		</svg>
+	</span>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" display="none" version="1.1" height="0">
+		<symbol id="star-rating" viewBox="0 0 240 48">
+			<polygon points="24 35 12.244 41.18 14.489 28.09 4.979 18.82 18.122 16.91 24 5 29.878 16.91 43.021 18.82 33.511 28.09 35.756 41.18"></polygon>
+			<polygon points="72 35 60.244 41.18 62.489 28.09 52.979 18.82 66.122 16.91 72 5 77.878 16.91 91.021 18.82 81.511 28.09 83.756 41.18"></polygon>
+			<polygon points="120 35 108.244 41.18 110.489 28.09 100.979 18.82 114.122 16.91 120 5 125.878 16.91 139.021 18.82 129.511 28.09 131.756 41.18"></polygon>
+			<polygon points="168 35 156.244 41.18 158.489 28.09 148.979 18.82 162.122 16.91 168 5 173.878 16.91 187.021 18.82 177.511 28.09 179.756 41.18"></polygon>
+			<polygon points="216 35 204.244 41.18 206.489 28.09 196.979 18.82 210.122 16.91 216 5 221.878 16.91 235.021 18.82 225.511 28.09 227.756 41.18"></polygon>
+		</symbol>
+</svg>
+																			</div>
+																			<h3 class="h3-psicologo-style mx-auto d-block text-lg-center mg-clear">
+																					2 Clases
+																				</h3>
+																			<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+																				</div><a class="btn btn-block btn-opera-mauve">Reservar</a>
+																			<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+																					</div><span class="far fa-heart icon-opera-mauve float-lg-none icon-sm"></span>
+																		</div>
+																		<div class="col-lg-3">
+																						<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																							<strong>Angel K.</strong>
+																						</h2>
+																						<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																							Psicológo
+																						</h3>
+																						<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																							<strong>Especialidades:</strong><br>
+																						</h2>
+																						<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																							Psicología cognitiva
+																						</h3>
+																						<div class="row">
+																							<div class="col">
+																								<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																									<strong>Precio:</strong><br>
+																								</h2>
+																								<h3 class="h3-psicologo-style mg-sm mx-auto d-block text-lg-left">
+																									$245.00
+																								</h3>
+																							</div>
+																							<div class="col">
+																								<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																									<strong>Prueba</strong><br>
+																								</h2>
+																								<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																									$80.00
+																								</h3>
+																							</div>
+																						</div>
+																					</div>
+																		<div class="col">
+																						<ul class="nav nav-tabs" id="nav-49361-tab" role="tablist">
+																							<li class="nav-item">
+																								<a class="a-btn nav-link active ltc-black" id="nav-49361-tab-1" data-toggle="tab" href="#nav-49361-content-1" role="tab" aria-controls="nav-49361-content-1" aria-selected="true">Video</a>
+																							</li>
+																							<li class="nav-item">
+																								<a class="a-btn nav-link ltc-black" id="nav-49361-tab-2" data-toggle="tab" href="#nav-49361-content-2" role="tab" aria-controls="nav-49361-content-2" aria-selected="false">Presentación</a>
+																							</li>
+																							<li class="nav-item">
+																								<a class="a-btn nav-link ltc-black" id="nav-49361-tab-3" data-toggle="tab" href="#nav-49361-content-3" role="tab" aria-controls="nav-49361-content-3" aria-selected="false">Calendario</a>
+																							</li>
+																						</ul>
+																						<div class="tab-content">
+																							<div class="divider-h divider-bloc-13-padding">
+																								<span class="divider"></span>
+																							</div>
+																							<div class="tab-pane fade-tab-bs show active" id="nav-49361-content-1" role="tabpanel" aria-labelledby="nav-49361-content-1">
+																								<div class="embed-responsive embed-responsive-16by9">
+																									<video controls class="embed-responsive-item lazyload" data-src="/vid/video-placeholder.mp4">
+																										<source src="/img/lazyload-ph.png" data-src="/vid/video-placeholder.mp4" type="video/mp4" />Your browser does not support HTML5 video.
+																									</video>
+																								</div>
+																							</div>
+																							<div class="tab-pane fade-tab-bs" id="nav-49361-content-2" role="tabpanel" aria-labelledby="nav-49361-content-2">
+																								<p class="mx-auto d-block p-5-style">
+																									Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+																								</p>
+																							</div>
+																							<div class="tab-pane fade-tab-bs" id="nav-49361-content-3" role="tabpanel" aria-labelledby="nav-49361-content-3">
+																								<div><div id="be-date-picker-ID" class="input-group datepicker" data-lang="en" data-inputid="date" data-weekstart="monday" data-dateformat="DD.MM.YYYY" data-calendarwidth="500.00px" data-infobox="1" data-fontfamily="" data-datepickercolor="#AD80B9">
+    <input type="text" id="date" class="form-control datepicker-input-field">
+
+</div>
+																								</div>
+																							</div>
+																						</div>
+																					</div>
+																	</div>
+																</div>
+															</div>
+											<div class="divider-h divider-bloc-13-padding">
+																				<span class="divider"></span>
+																			</div>
+											<div class="card bgc-platinum border-0">
+																				<div class="card-body">
+																					<div class="row">
+																						<div class="col-lg-2">
+																							<img src="/images/lazyload-ph.png" data-src="/images/Angel-Icono.jpg" class="img-fluid img-protected rounded-circle mx-auto d-block img-22-style mg-sm lazyload" alt="Angel Icono" />
+																							<h2 class="h2-angel-k--style mg-sm mx-auto d-block text-lg-center tc-black">
+																								<strong>Calificado</strong>
+																							</h2>
+																							<div><label style="color:rgba(0,0,0,.5);" class="rating-label"></label>
+
+<div class="rating">
+	<span class="rating-score" style="width: 100%;">
+		<svg fill="#B083BD" width="100.00" height="33.333333333333336">
+			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-rating"></use>
+		</svg>
+	</span>
+	<span class="rating-empty">
+		<svg fill="rgba(0,0,0,.1)" width="100.00" height="33.333333333333336">
+			<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#star-rating"></use>
+		</svg>
+	</span>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" display="none" version="1.1" height="0">
+		<symbol id="star-rating" viewBox="0 0 240 48">
+			<polygon points="24 35 12.244 41.18 14.489 28.09 4.979 18.82 18.122 16.91 24 5 29.878 16.91 43.021 18.82 33.511 28.09 35.756 41.18"></polygon>
+			<polygon points="72 35 60.244 41.18 62.489 28.09 52.979 18.82 66.122 16.91 72 5 77.878 16.91 91.021 18.82 81.511 28.09 83.756 41.18"></polygon>
+			<polygon points="120 35 108.244 41.18 110.489 28.09 100.979 18.82 114.122 16.91 120 5 125.878 16.91 139.021 18.82 129.511 28.09 131.756 41.18"></polygon>
+			<polygon points="168 35 156.244 41.18 158.489 28.09 148.979 18.82 162.122 16.91 168 5 173.878 16.91 187.021 18.82 177.511 28.09 179.756 41.18"></polygon>
+			<polygon points="216 35 204.244 41.18 206.489 28.09 196.979 18.82 210.122 16.91 216 5 221.878 16.91 235.021 18.82 225.511 28.09 227.756 41.18"></polygon>
+		</symbol>
+</svg>
+																							</div>
+																							<h3 class="h3-psicologo-style mx-auto d-block text-lg-center mg-clear">
+																									2 Clases
+																								</h3>
+																							<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+																								</div><a class="btn btn-block btn-opera-mauve">Reservar</a>
+																							<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+																									</div><span class="far fa-heart icon-opera-mauve float-lg-none icon-sm"></span>
+																						</div>
+																						<div class="col-lg-3">
+																										<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																											<strong>Angel K.</strong>
+																										</h2>
+																										<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																											Psicológo
+																										</h3>
+																										<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																											<strong>Especialidades:</strong><br>
+																										</h2>
+																										<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																											Psicología cognitiva
+																										</h3>
+																										<div class="row">
+																											<div class="col">
+																												<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																													<strong>Precio:</strong><br>
+																												</h2>
+																												<h3 class="h3-psicologo-style mg-sm mx-auto d-block text-lg-left">
+																													$245.00
+																												</h3>
+																											</div>
+																											<div class="col">
+																												<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
+																													<strong>Prueba</strong><br>
+																												</h2>
+																												<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
+																													$80.00
+																												</h3>
+																											</div>
+																										</div>
+																									</div>
+																						<div class="col">
+																										<ul class="nav nav-tabs" id="nav-49361-tab" role="tablist">
+																											<li class="nav-item">
+																												<a class="a-btn nav-link active ltc-black" id="nav-49361-tab-1" data-toggle="tab" href="#nav-49361-content-1" role="tab" aria-controls="nav-49361-content-1" aria-selected="true">Video</a>
+																											</li>
+																											<li class="nav-item">
+																												<a class="a-btn nav-link ltc-black" id="nav-49361-tab-2" data-toggle="tab" href="#nav-49361-content-2" role="tab" aria-controls="nav-49361-content-2" aria-selected="false">Presentación</a>
+																											</li>
+																											<li class="nav-item">
+																												<a class="a-btn nav-link ltc-black" id="nav-49361-tab-3" data-toggle="tab" href="#nav-49361-content-3" role="tab" aria-controls="nav-49361-content-3" aria-selected="false">Calendario</a>
+																											</li>
+																										</ul>
+																										<div class="tab-content">
+																											<div class="divider-h divider-bloc-13-padding">
+																												<span class="divider"></span>
+																											</div>
+																											<div class="tab-pane fade-tab-bs show active" id="nav-49361-content-1" role="tabpanel" aria-labelledby="nav-49361-content-1">
+																												<div class="embed-responsive embed-responsive-16by9">
+																													<video controls class="embed-responsive-item lazyload" data-src="/vid/video-placeholder.mp4">
+																														<source src="/img/lazyload-ph.png" data-src="/vid/video-placeholder.mp4" type="video/mp4" />Your browser does not support HTML5 video.
+																													</video>
+																												</div>
+																											</div>
+																											<div class="tab-pane fade-tab-bs" id="nav-49361-content-2" role="tabpanel" aria-labelledby="nav-49361-content-2">
+																												<p class="mx-auto d-block p-5-style">
+																													Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
+																												</p>
+																											</div>
+																											<div class="tab-pane fade-tab-bs" id="nav-49361-content-3" role="tabpanel" aria-labelledby="nav-49361-content-3">
+																												<div><div id="be-date-picker-ID" class="input-group datepicker" data-lang="en" data-inputid="date" data-weekstart="monday" data-dateformat="DD.MM.YYYY" data-calendarwidth="500.00px" data-infobox="1" data-fontfamily="" data-datepickercolor="#AD80B9">
+    <input type="text" id="date" class="form-control datepicker-input-field">
+
+</div>
+																												</div>
+																											</div>
+																										</div>
+																									</div>
+																					</div>
+																				</div>
+																			</div>
+										</div>
+				</div>
+		<div class="row">
+																						<div class="col">
+																							<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+																							</div>
+																						</div>
+																					</div>
+	</div>
+</div>
+<!-- bloc-13 END -->
+
+<!-- bloc-10 -->
+<div class="bloc bgc-platinum bg-Fondo-Color-2222 d-bloc" id="bloc-10">
+	<div class="container bloc-no-padding-lg bloc-no-padding-md bloc-no-padding-sm bloc-no-padding">
+		<div class="row">
+			<div class="col">
+				<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+				</div>
+				<div class="text-center">
+						<a href="." class="btn btn-opera-mauve btn-rd btn-xl letras">Empieza tu tratamiento</a>
+					</div>
+				<div><div class="text-center">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 50" stroke-width="1" stroke="transparent" fill="none" stroke-linecap="round" style="max-width:500px"><path d="M264,25H500"></path><path d="M0,25H237"></path><path d="M251,22v7"></path><path d="M247,22v7"></path><path d="M255,22v7"></path><path d="M259,22v7"></path><path d="M243,22v7"></path></svg>
+</div>
+					</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-10 END -->
+
+
     <!-- footer -->
     <%- include('../partials/footer') %>
-    <!-- <script src="/js/selected.js"></script> -->
-    <script>
-        function video(elem){
-            elem.classList.add('selected');
-            elem.classList.remove('no-selected');
-            elem.nextSibling.classList.add('no-selected');
-            elem.nextSibling.classList.remove('selected');
-            elem.nextSibling.nextSibling.classList.add('no-selected');
-            elem.nextSibling.nextSibling.classList.remove('selected');
-        }
-        function descrip(elem){
-            elem.classList.add('selected');
-            elem.classList.remove('no-selected');
-            elem.nextSibling.classList.add('no-selected');
-            elem.nextSibling.classList.remove('selected');
-            elem.previousSibling.classList.add('no-selected');
-            elem.previousSibling.classList.remove('selected');
-        }
-        function dispo(elem){
-            elem.classList.add('selected');
-            elem.classList.remove('no-selected');
-            elem.previousSibling.classList.add('no-selected');
-            elem.previousSibling.classList.remove('selected');
-            elem.previousSibling.previousSibling.classList.add('no-selected');
-            elem.previousSibling.previousSibling.classList.remove('selected');
-        }
-    </script>
+    <!-- <script src="s/selected.js"></script> -->
     <!-- /footer -->
+
+</div>
+<!-- Main container END -->
+
 </body>
 </html>
