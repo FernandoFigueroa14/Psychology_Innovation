@@ -13,6 +13,7 @@
 <div class="page-container">
     <!-- header --> 
     <%- include('../partials/header') %>
+	<script src="/js/filtro.js"></script>
     <!-- /header -->
     
 <!-- bloc-13 -->
@@ -193,22 +194,21 @@
 												<div class="col-12 col-lg-5">
 													<div class="form-group">
 														<div class="form-group">
-															<input class="form-control" id="input_2392" placeholder="Busca tu psicólogo" />
+															<input class="form-control" type="text" id="input_2392" placeholder="Busca tu psicólogo" />
 														</div>
 													</div>
 												</div>
 												<div class="col">
 													<div class="form-group">
 														<div class="form-group">
-															<input class="form-control" placeholder="Terapias recientes" />
+															<input class="form-control" id="terap_recientes" placeholder="Terapias recientes" />
 														</div>
 													</div>
 												</div>
 											</div>
-						
                                             <% terapeutas.forEach(terapeuta => { %>
                                             <div class="card bgc-platinum border-0">
-												<div class="card-body">
+												<div class="card-body terap-card">
 													<div class="row">
 														<div class="col-lg-2">
 															<img src="/images/lazyload-ph.png" data-src="/images/profilePicTerap/<%= terapeuta.linkImagen%>" class="img-fluid img-protected rounded-circle mx-auto d-block img-22-style mg-sm lazyload" alt="Angel Icono" />
@@ -254,7 +254,7 @@
 														</div>
 														<div class="col-lg-3">
 																		<h2 class="h2-angel-k--style mg-sm mx-auto d-block tc-black">
-																			<strong><%= `${terapeuta.nombres} ${terapeuta.apellidos}` %></strong>
+																			<strong class="terap-nombre"><%= `${terapeuta.nombres} ${terapeuta.apellidos}` %></strong>
 																		</h2>
 																		<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
 																			Psicológo
