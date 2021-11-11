@@ -4,6 +4,170 @@ window.addEventListener('load', function(){
     let terapeutas = document.querySelectorAll('.terap-card');
     let nombres = document.querySelectorAll('.terap-nombre');
 
+    //Especialidades
+    let depresion = document.querySelector('#depresion');
+    let ansiedad = document.querySelector('#ansiedad');
+    let autoestima = document.querySelector('#autoestima');
+    let terapPareja = document.querySelector('#terap-parejas');
+    let desarrollo = document.querySelector('#desarrollo');
+    let alimenticio = document.querySelector('#alimenticio');
+    let terapFamiliar = document.querySelector('#terap-familiar');
+    let especialidades = document.querySelectorAll('.especialidad');
+
+    let especial = []
+
+    especialidades.forEach(especialidad => {
+        especial.push(especialidad.innerText.toLowerCase().split('\n'))
+    });
+
+    console.log(especial);
+
+    depresion.addEventListener('click', () => {
+        let valor = depresion.checked;
+
+        for(i in especial){
+            for(j in especial[i]){
+                if(valor){
+                    if(especial[i][j] == 'depresión'){
+                        terapeutas[i].classList.remove('d-none');
+                        break
+                    } else {
+                        terapeutas[i].classList.add('d-none');
+                    }
+                }else{
+                    terapeutas[i].classList.remove('d-none');
+                } 
+            }
+        }
+    })
+
+    ansiedad.addEventListener('click', () => {
+        let valor = ansiedad.checked;
+
+        console.log(valor)
+
+        for(i in especial){
+            for(j in especial[i]){
+                if(valor){
+                    if(especial[i][j] == 'ansiedad'){
+                        terapeutas[i].classList.remove('d-none');
+                        break
+                    } else {
+                        terapeutas[i].classList.add('d-none');
+                    }
+                }else{
+                    terapeutas[i].classList.remove('d-none');
+                } 
+            }
+        }
+    });
+
+    autoestima.addEventListener('click', () => {
+        let valor = autoestima.checked;
+
+        console.log(valor)
+
+        for(i in especial){
+            for(j in especial[i]){
+                if(valor){
+                    if(especial[i][j] == 'autoestima'){
+                        terapeutas[i].classList.remove('d-none');
+                        break
+                    } else {
+                        terapeutas[i].classList.add('d-none');
+                    }
+                }else{
+                    terapeutas[i].classList.remove('d-none');
+                } 
+            }
+        }
+    });
+
+    terapPareja.addEventListener('click', () => {
+        let valor = terapPareja.checked;
+
+        console.log(valor)
+
+        for(i in especial){
+            for(j in especial[i]){
+                if(valor){
+                    if(especial[i][j] == 'terapia de parejas'){
+                        terapeutas[i].classList.remove('d-none');
+                        break
+                    } else {
+                        terapeutas[i].classList.add('d-none');
+                    }
+                }else{
+                    terapeutas[i].classList.remove('d-none');
+                } 
+            }
+        }
+    });
+
+    desarrollo.addEventListener('click', () => {
+        let valor = desarrollo.checked;
+
+        console.log(valor)
+
+        for(i in especial){
+            for(j in especial[i]){
+                if(valor){
+                    if(especial[i][j] == 'desarrollo personal'){
+                        terapeutas[i].classList.remove('d-none');
+                        break
+                    } else {
+                        terapeutas[i].classList.add('d-none');
+                    }
+                }else{
+                    terapeutas[i].classList.remove('d-none');
+                } 
+            }
+        }
+    });
+
+    alimenticio.addEventListener('click', () => {
+        let valor = alimenticio.checked;
+
+        console.log(valor)
+
+        for(i in especial){
+            for(j in especial[i]){
+                if(valor){
+                    if(especial[i][j] == 'trastorno alimenticio'){
+                        terapeutas[i].classList.remove('d-none');
+                        break
+                    } else {
+                        terapeutas[i].classList.add('d-none');
+                    }
+                }else{
+                    terapeutas[i].classList.remove('d-none');
+                } 
+            }
+        }
+    });
+
+    terapFamiliar.addEventListener('click', () => {
+        let valor = terapFamiliar.checked;
+
+        console.log(valor)
+
+        for(i in especial){
+            for(j in especial[i]){
+                if(valor){
+                    console.log(especial[i][j])
+                    if(especial[i][j] == 'terapia familiar'){
+                        terapeutas[i].classList.remove('d-none');
+                        break
+                    } else {
+                        terapeutas[i].classList.add('d-none');
+                    }
+                }else{
+                    terapeutas[i].classList.remove('d-none');
+                } 
+            }
+        }
+    });
+
     let preguntas = [];
 
     nombres.forEach(nombre => {

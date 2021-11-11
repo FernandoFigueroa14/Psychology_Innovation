@@ -76,7 +76,7 @@
 								<div class="row">
 												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" />
+														<input id="depresion" class="form-check-input" type="checkbox" />
 														<label class="form-check-label">
 														</label>
 													</div>
@@ -90,7 +90,7 @@
 								<div class="row">
 												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" />
+														<input id="ansiedad" class="form-check-input" type="checkbox" />
 														<label class="form-check-label">
 														</label>
 													</div>
@@ -104,7 +104,7 @@
 								<div class="row">
 												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" />
+														<input id="autoestima" class="form-check-input" type="checkbox" />
 														<label class="form-check-label">
 														</label>
 													</div>
@@ -118,7 +118,7 @@
 								<div class="row">
 												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" />
+														<input id="terap-parejas" class="form-check-input" type="checkbox" />
 														<label class="form-check-label">
 														</label>
 													</div>
@@ -132,21 +132,21 @@
 								<div class="row">
 												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" />
+														<input id="desarrollo" class="form-check-input" type="checkbox" />
 														<label class="form-check-label">
 														</label>
 													</div>
 												</div>
 												<div class="col align-self-center">
 													<h3 class="h3-psicologo-style mx-auto d-block text-lg-left mg-clear">
-														Desarollo Personal
+														Desarrollo Personal
 													</h3>
 												</div>
 											</div>
 								<div class="row">
 												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" />
+														<input id="alimenticio" class="form-check-input" type="checkbox" />
 														<label class="form-check-label">
 														</label>
 													</div>
@@ -160,7 +160,7 @@
 								<div class="row">
 												<div class="col-lg-1 align-self-center col-md-1 col-sm-1 col-2">
 													<div class="form-check">
-														<input class="form-check-input" type="checkbox" />
+														<input id="terap-familiar" class="form-check-input" type="checkbox" />
 														<label class="form-check-label">
 														</label>
 													</div>
@@ -263,7 +263,7 @@
 																			<strong>Especialidades:</strong><br>
 																		</h2>
 																		<h3 class="h3-psicologo-style mx-auto d-block mg-sm text-lg-left">
-																			<ul>
+																			<ul class="especialidad">
                                                                                 <%const especialidades = terapeuta.especialidades.split(",");%>
                                                                                 <% especialidades.forEach(especialidad => { %>
                                                                                     <li><%=especialidad%></li>
