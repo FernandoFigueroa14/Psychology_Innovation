@@ -27,7 +27,7 @@ window.addEventListener('load', function(){
                 // console.log(terap[indice])
                 terap[indice].classList.add('d-none');
             }
-          }else{
+          }else if(pal.length <= 0){
                 terap[indice].classList.remove('d-none');
           }
         }
