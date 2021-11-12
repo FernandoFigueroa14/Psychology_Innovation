@@ -143,8 +143,8 @@ window.addEventListener('load', function(){
         preguntas.push(arrayNombre);
     })
 
-    function autocompletado() {
-        let pal = busca.value;
+    function autocompletado(entrada) {
+        let pal = entrada.value;
         let tam = pal.length;
         let terap = terapeutas;
         for(indice in preguntas){
@@ -167,7 +167,10 @@ window.addEventListener('load', function(){
       }
 
     busca.addEventListener('keyup', function(){
-        autocompletado();
+        autocompletado(busca);
+    })
+    recientes.addEventListener('keyup', function(){
+        autocompletado(recientes);
     })
 
     
