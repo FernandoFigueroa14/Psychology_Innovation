@@ -40,7 +40,9 @@ window.addEventListener('load', function(){
                     }
             });
         }else{
-            terapeutas[i].classList.remove('d-none'); 
+            terapeutas.forEach(terapeuta => {
+                terapeuta.classList.remove('d-none');
+            }) 
         }
     };
 
